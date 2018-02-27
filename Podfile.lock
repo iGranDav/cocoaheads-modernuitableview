@@ -1,0 +1,61 @@
+PODS:
+  - Extra (1.1.1):
+    - Extra/Foundation (= 1.1.1)
+    - Extra/UIKit (= 1.1.1)
+  - Extra/Foundation (1.1.1)
+  - Extra/Realm (1.1.1):
+    - RealmSwift (~> 3.0)
+  - Extra/UIKit (1.1.1)
+  - Kingfisher (4.6.2)
+  - Realm (3.1.1):
+    - Realm/Headers (= 3.1.1)
+  - Realm/Headers (3.1.1)
+  - RealmSwift (3.1.1):
+    - Realm (= 3.1.1)
+  - Reusable (4.0.0):
+    - Reusable/Storyboard (= 4.0.0)
+    - Reusable/View (= 4.0.0)
+  - Reusable/Storyboard (4.0.0)
+  - Reusable/View (4.0.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxRealm (0.7.5):
+    - RealmSwift (~> 3.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - SwiftGen (5.2.1)
+  - SwiftLint (0.25.0)
+  - SwiftyBeaver (1.5.1)
+  - SwiftyUserDefaults (3.0.1)
+
+DEPENDENCIES:
+  - Extra (~> 1.0)
+  - Extra/Realm (~> 1.0)
+  - Kingfisher (~> 4.3)
+  - RealmSwift (~> 3.0)
+  - Reusable (~> 4.0.0)
+  - RxCocoa (~> 4.0)
+  - RxRealm (~> 0.7.4)
+  - RxSwift (~> 4.0)
+  - SwiftGen (~> 5.2.1)
+  - SwiftLint (~> 0.25)
+  - SwiftyBeaver (~> 1.5)
+  - SwiftyUserDefaults (~> 3.0.0)
+
+SPEC CHECKSUMS:
+  Extra: 7c4e5aff4904ecdadc615f63d4c2f0c20910c028
+  Kingfisher: 55b9c395bf8d3949676ad3861111923990ab68cf
+  Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
+  RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
+  Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e
+  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
+  SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
+
+PODFILE CHECKSUM: 4f663d4bf16c85d7988c61316b128e21dcf51382
+
+COCOAPODS: 1.4.0
