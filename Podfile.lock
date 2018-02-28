@@ -25,6 +25,7 @@ PODS:
   - RxSwift (4.1.2)
   - SwiftGen (5.2.1)
   - SwiftLint (0.25.0)
+  - SwiftSoup (1.6.1)
   - SwiftyBeaver (1.5.1)
   - SwiftyUserDefaults (3.0.1)
 
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - RxSwift (~> 4.0)
   - SwiftGen (~> 5.2.1)
   - SwiftLint (~> 0.25)
+  - SwiftSoup (~> 1.6)
   - SwiftyBeaver (~> 1.5)
   - SwiftyUserDefaults (~> 3.0.0)
 
@@ -53,9 +55,10 @@ SPEC CHECKSUMS:
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  SwiftSoup: 1eedf56f751b36035ae6c95562f86944c9cfafee
   SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 4f663d4bf16c85d7988c61316b128e21dcf51382
+PODFILE CHECKSUM: aa5dc6eb3d9f5910e6b316a0ad9dd031f7675345
 
 COCOAPODS: 1.4.0

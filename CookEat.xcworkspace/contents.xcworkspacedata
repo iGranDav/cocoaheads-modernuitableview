@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CookEat/Playground.playground">
+   </FileRef>
+   <FileRef
       location = "group:CookEat/CookEat.xcodeproj">
    </FileRef>
    <FileRef

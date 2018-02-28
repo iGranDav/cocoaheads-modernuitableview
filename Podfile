@@ -18,6 +18,7 @@ def shared_pods
   pod 'RxRealm', '~> 0.7.4'
 
   pod 'SwiftyUserDefaults', '~> 3.0.0'
+  pod 'SwiftSoup', '~> 1.6'
 
   # UI
   pod 'Reusable', '~> 4.0.0'
