@@ -19,6 +19,9 @@
 		63777EEC204DEE8200A63348 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EEA204DEE8200A63348 /* ListingViewController.swift */; };
 		63777EED204DEE8200A63348 /* Listing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63777EEB204DEE8200A63348 /* Listing.storyboard */; };
 		63777EF3204DEED700A63348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63777EF2204DEED700A63348 /* Main.storyboard */; };
+		63777EF5204DF91200A63348 /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EF4204DF91200A63348 /* RealmConfig.swift */; };
+		63777EF7204DF99100A63348 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EF6204DF99100A63348 /* Config.swift */; };
+		63777EF9204DFA1D00A63348 /* LogsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EF8204DFA1D00A63348 /* LogsConfig.swift */; };
 		6393F81D204614EA00C4B07B /* CookEatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6393F81C204614EA00C4B07B /* CookEatTests.swift */; };
 		6393F82E20461C0900C4B07B /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6393F82D20461C0900C4B07B /* ActionViewController.swift */; };
 		6393F83120461C0900C4B07B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6393F82F20461C0900C4B07B /* MainInterface.storyboard */; };
@@ -77,6 +80,10 @@
 		63777EEA204DEE8200A63348 /* ListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
 		63777EEB204DEE8200A63348 /* Listing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Listing.storyboard; sourceTree = "<group>"; };
 		63777EF2204DEED700A63348 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		63777EF4204DF91200A63348 /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
+		63777EF6204DF99100A63348 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		63777EF8204DFA1D00A63348 /* LogsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsConfig.swift; sourceTree = "<group>"; };
+		63777EFA204DFBC200A63348 /* CookEat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CookEat.entitlements; sourceTree = "<group>"; };
 		6393F802204614EA00C4B07B /* CookEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6393F813204614EA00C4B07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6393F818204614EA00C4B07B /* CookEatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookEatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +144,9 @@
 		63777EBF204DE55700A63348 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				63777EF6204DF99100A63348 /* Config.swift */,
+				63777EF4204DF91200A63348 /* RealmConfig.swift */,
+				63777EF8204DFA1D00A63348 /* LogsConfig.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -232,9 +242,10 @@
 		6393F804204614EA00C4B07B /* CookEat */ = {
 			isa = PBXGroup;
 			children = (
+				6393F813204614EA00C4B07B /* Info.plist */,
+				63777EFA204DFBC200A63348 /* CookEat.entitlements */,
 				63777EBE204DE55700A63348 /* Code */,
 				63777EC7204DE55700A63348 /* Resources */,
-				6393F813204614EA00C4B07B /* Info.plist */,
 			);
 			path = CookEat;
 			sourceTree = "<group>";
@@ -343,6 +354,11 @@
 					6393F801204614EA00C4B07B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					6393F817204614EA00C4B07B = {
 						CreatedOnToolsVersion = 9.2;
@@ -516,10 +532,13 @@
 			files = (
 				63777ECF204DE55700A63348 /* AppDelegate.swift in Sources */,
 				63777EE9204DEE0600A63348 /* BootViewController.swift in Sources */,
+				63777EF7204DF99100A63348 /* Config.swift in Sources */,
 				63777EE0204DEA5A00A63348 /* Storyboards.swift in Sources */,
+				63777EF5204DF91200A63348 /* RealmConfig.swift in Sources */,
 				63777EE1204DEA5A00A63348 /* Assets.swift in Sources */,
 				63777EEC204DEE8200A63348 /* ListingViewController.swift in Sources */,
 				63777EDD204DE9EA00A63348 /* Strings.swift in Sources */,
+				63777EF9204DFA1D00A63348 /* LogsConfig.swift in Sources */,
 				63777ECE204DE55700A63348 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -699,6 +718,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CookEat/CookEat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
 				INFOPLIST_FILE = CookEat/Info.plist;
@@ -716,6 +736,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CookEat/CookEat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
 				INFOPLIST_FILE = CookEat/Info.plist;
