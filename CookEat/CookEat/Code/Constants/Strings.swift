@@ -9,6 +9,12 @@ import Foundation
 enum L10n {
   /// CookEat
   static let appname = L10n.tr("Localizable", "appname")
+  /// Cancel
+  static let commonCancel = L10n.tr("Localizable", "common.cancel")
+  /// Ok
+  static let commonOk = L10n.tr("Localizable", "common.ok")
+  /// Your recipes
+  static let listingTitle = L10n.tr("Localizable", "listing.title")
 }
 // swiftlint:enable identifier_name line_length type_body_length
 

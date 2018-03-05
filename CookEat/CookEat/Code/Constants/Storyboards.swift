@@ -62,6 +62,8 @@ enum StoryboardScene {
     static let storyboardName = "Listing"
 
     static let initialScene = InitialSceneType<UISplitViewController>(storyboard: Listing.self)
+
+    static let recipeDetailViewController = SceneType<CookEat.RecipeDetailViewController>(storyboard: Listing.self, identifier: "RecipeDetailViewController")
   }
   enum Main: StoryboardType {
     static let storyboardName = "Main"
@@ -73,9 +75,6 @@ enum StoryboardScene {
 }
 
 enum StoryboardSegue {
-  enum Listing: String, SegueType {
-    case showListingDetail
-  }
   enum Main: String, SegueType {
     case embedListing = "EmbedListing"
   }

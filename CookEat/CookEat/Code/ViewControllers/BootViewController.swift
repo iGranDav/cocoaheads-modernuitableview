@@ -31,12 +31,12 @@ extension BootViewController: UISplitViewControllerDelegate {
                              collapseSecondary secondaryViewController: UIViewController,
                              onto primaryViewController: UIViewController) -> Bool {
 
-        guard let secondaryAsNavController = secondaryViewController as? UINavigationController,
-              let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else {
+        guard let secondaryAsNavVC = secondaryViewController as? UINavigationController,
+              let topAsDetailController = secondaryAsNavVC.topViewController as? RecipeDetailViewController else {
             return false
         }
 
-        if topAsDetailController.detailItem == nil {
+        if topAsDetailController.recipe == nil {
             // Return true to indicate that we have handled the collapse by doing nothing;
             // the secondary controller will be discarded.
             return true

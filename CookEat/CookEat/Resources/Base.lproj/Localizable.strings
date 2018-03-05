@@ -7,6 +7,9 @@
 
 "appname" = "CookEat";
 
-#Commons
+//Commons
 "common.ok" = "Ok";
 "common.cancel" = "Cancel";
+
+//Listing
+"listing.title" = "Your recipes";
