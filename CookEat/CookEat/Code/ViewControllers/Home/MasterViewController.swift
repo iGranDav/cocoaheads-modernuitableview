@@ -2,12 +2,10 @@
 //  MasterViewController.swift
 //  CookEat
 //
-//  Created by David Bonnet on 27/02/2018.
 //  Copyright © 2018 Harpp. All rights reserved.
 //
 
 import UIKit
-import SwiftSoup
 
 class MasterViewController: UITableViewController {
 
@@ -27,33 +25,11 @@ class MasterViewController: UITableViewController {
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
 
-        do {
-            let html = try String(contentsOf: URL(string: "http://www.marmiton.org/recettes/recette_gateau-de-crepes-facon-cheesecake-a-la-confiture-de-chataigne-a-la-vanille_349510.aspx") ?? URL(fileURLWithPath: ""))
-            let doc: Document = try SwiftSoup.parse(html)
-            let link: Element = try! doc.select("a").first()!
-
-            let text: String = try! doc.body()!.text()
-            let linkHref: String = try! link.attr("href")
-            let linkText: String = try! link.text()
-
-            let linkOuterH: String = try! link.outerHtml()
-            let linkInnerH: String = try! link.html()
-
-        } catch Exception.Error(let type, let message) {
-            print(message)
-        } catch {
-            print("error")
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @objc

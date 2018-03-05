@@ -2,7 +2,6 @@
 //  DetailViewController.swift
 //  CookEat
 //
-//  Created by David Bonnet on 27/02/2018.
 //  Copyright © 2018 Harpp. All rights reserved.
 //
 
