@@ -28,6 +28,8 @@ def shared_pods
   pod 'SwiftyBeaver', '~> 1.5'
   pod 'SwiftGen', '~> 5.2.1'
   pod 'SwiftLint', '~> 0.25'
+  pod 'Crashlytics', '~> 3.10.1'
+  
 end
 
 inhibit_all_warnings!

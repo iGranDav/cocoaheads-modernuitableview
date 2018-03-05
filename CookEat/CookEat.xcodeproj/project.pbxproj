@@ -295,6 +295,7 @@
 				C02A510DE05BED07E5490ED8 /* [CP] Embed Pods Frameworks */,
 				45152D2A4243099BCACDF074 /* [CP] Copy Pods Resources */,
 				6393F83520461C0900C4B07B /* Embed App Extensions */,
+				63777EFB204DFE5F00A63348 /* 📦 Fabric / Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -466,6 +467,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PROJECT_DIR/Scripts/swiftlint.sh\"";
+		};
+		63777EFB204DFE5F00A63348 /* 📦 Fabric / Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Fabric / Crashlytics";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}\"/Fabric/iOS/Fabric.framework/run 8188f13403eb773bb89af2ee67a9baab10d7aee5 3f243602c10d8afa049e67502a009d813d72a89f507fc0a669882df86e5dc44d";
 		};
 		C02A510DE05BED07E5490ED8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
