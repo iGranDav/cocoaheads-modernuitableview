@@ -58,16 +58,26 @@ enum StoryboardScene {
 
     static let initialScene = InitialSceneType<UIViewController>(storyboard: LaunchScreen.self)
   }
+  enum Listing: StoryboardType {
+    static let storyboardName = "Listing"
+
+    static let initialScene = InitialSceneType<UISplitViewController>(storyboard: Listing.self)
+  }
   enum Main: StoryboardType {
     static let storyboardName = "Main"
 
-    static let initialScene = InitialSceneType<UISplitViewController>(storyboard: Main.self)
+    static let initialScene = InitialSceneType<CookEat.BootViewController>(storyboard: Main.self)
+
+    static let bootViewController = SceneType<CookEat.BootViewController>(storyboard: Main.self, identifier: "BootViewController")
   }
 }
 
 enum StoryboardSegue {
+  enum Listing: String, SegueType {
+    case showListingDetail
+  }
   enum Main: String, SegueType {
-    case showDetail
+    case embedListing = "EmbedListing"
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
