@@ -16,9 +16,9 @@ class ActionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+
         // Get the item[s] we're handling from the extension context.
-        
+
         // For example, look for an image and place it into an image view.
         // Replace this with something appropriate for the type[s] your extension supports.
         var imageFound = false
@@ -47,12 +47,12 @@ class ActionViewController: UIViewController {
                             }
                         }
                     })
-                    
+
                     imageFound = true
                     break
                 }
             }
-            
+
             if (imageFound) {
                 // We only handle one image, so stop looking for more.
                 break

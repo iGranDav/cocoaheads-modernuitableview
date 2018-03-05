@@ -71,6 +71,8 @@
 		63777EDC204DE9E900A63348 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		63777EDE204DEA5A00A63348 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		63777EDF204DEA5A00A63348 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		63777EE5204DEBAF00A63348 /* swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = swiftlint.sh; sourceTree = "<group>"; };
+		63777EE6204DEBAF00A63348 /* swiftgen.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = swiftgen.sh; sourceTree = "<group>"; };
 		6393F802204614EA00C4B07B /* CookEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6393F813204614EA00C4B07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6393F818204614EA00C4B07B /* CookEatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookEatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,12 +191,22 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		63777EE2204DEB8600A63348 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				63777EE6204DEBAF00A63348 /* swiftgen.sh */,
+				63777EE5204DEBAF00A63348 /* swiftlint.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		6393F7F9204614EA00C4B07B = {
 			isa = PBXGroup;
 			children = (
 				6393F804204614EA00C4B07B /* CookEat */,
 				6393F81B204614EA00C4B07B /* CookEatTests */,
 				6393F82C20461C0900C4B07B /* CookEat-Action-Import */,
+				63777EE2204DEB8600A63348 /* Scripts */,
 				6393F803204614EA00C4B07B /* Products */,
 				BAFAF7B47D22433AEBBD7832 /* Pods */,
 				52B49496E557137E8EEDD004 /* Frameworks */,
@@ -259,6 +271,7 @@
 			buildPhases = (
 				FC4B0B021530E37AE8ACC417 /* [CP] Check Pods Manifest.lock */,
 				63777EDA204DE82100A63348 /* 🛠 SwiftGen */,
+				63777EE7204DEBE900A63348 /* ⚠️ SwiftLint */,
 				6393F7FE204614EA00C4B07B /* Sources */,
 				6393F7FF204614EA00C4B07B /* Frameworks */,
 				6393F800204614EA00C4B07B /* Resources */,
@@ -415,7 +428,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SRC_TARGET_DIR=\"$PROJECT_DIR/$TARGET_NAME\"\n\n#strings\n$PODS_ROOT/SwiftGen/bin/swiftgen strings $SRC_TARGET_DIR/Resources/Base.lproj/Localizable.strings --output $SRC_TARGET_DIR/Code/Constants/Strings.swift -t flat-swift4\n\n#storyboards\n$PODS_ROOT/SwiftGen/bin/swiftgen storyboards $SRC_TARGET_DIR/ --output $SRC_TARGET_DIR/Code/Constants/Storyboards.swift -t swift4\n\n#assets\nfind $SRC_TARGET_DIR -name '*.xcassets' -print0 | xargs -0 $PODS_ROOT/SwiftGen/bin/swiftgen xcassets -t swift4 --output $SRC_TARGET_DIR/Code/Constants/Assets.swift";
+			shellScript = "\"$PROJECT_DIR/Scripts/swiftgen.sh\"";
+		};
+		63777EE7204DEBE900A63348 /* ⚠️ SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "⚠️ SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PROJECT_DIR/Scripts/swiftlint.sh\"";
 		};
 		C02A510DE05BED07E5490ED8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
