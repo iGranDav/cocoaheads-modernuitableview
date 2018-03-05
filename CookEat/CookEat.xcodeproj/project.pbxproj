@@ -13,6 +13,10 @@
 		63777ED0204DE55700A63348 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63777EC8204DE55700A63348 /* Assets.xcassets */; };
 		63777ED1204DE55700A63348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63777EC9204DE55700A63348 /* LaunchScreen.storyboard */; };
 		63777ED2204DE55700A63348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63777ECB204DE55700A63348 /* Main.storyboard */; };
+		63777ED5204DE6D300A63348 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63777ED7204DE6D300A63348 /* Localizable.strings */; };
+		63777EDD204DE9EA00A63348 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EDC204DE9E900A63348 /* Strings.swift */; };
+		63777EE0204DEA5A00A63348 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EDE204DEA5A00A63348 /* Storyboards.swift */; };
+		63777EE1204DEA5A00A63348 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EDF204DEA5A00A63348 /* Assets.swift */; };
 		6393F81D204614EA00C4B07B /* CookEatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6393F81C204614EA00C4B07B /* CookEatTests.swift */; };
 		6393F82E20461C0900C4B07B /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6393F82D20461C0900C4B07B /* ActionViewController.swift */; };
 		6393F83120461C0900C4B07B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6393F82F20461C0900C4B07B /* MainInterface.storyboard */; };
@@ -62,6 +66,11 @@
 		63777EC8204DE55700A63348 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63777ECA204DE55700A63348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63777ECC204DE55700A63348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63777ED8204DE79600A63348 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63777EDB204DE85800A63348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63777EDC204DE9E900A63348 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		63777EDE204DEA5A00A63348 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		63777EDF204DEA5A00A63348 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		6393F802204614EA00C4B07B /* CookEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6393F813204614EA00C4B07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6393F818204614EA00C4B07B /* CookEatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookEatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +122,7 @@
 			children = (
 				63777EC5204DE55700A63348 /* AppDelegate */,
 				63777EBF204DE55700A63348 /* Config */,
+				63777ED9204DE7C200A63348 /* Constants */,
 				63777EC0204DE55700A63348 /* ViewControllers */,
 			);
 			path = Code;
@@ -164,8 +174,19 @@
 				63777EC8204DE55700A63348 /* Assets.xcassets */,
 				63777EC9204DE55700A63348 /* LaunchScreen.storyboard */,
 				63777ECB204DE55700A63348 /* Main.storyboard */,
+				63777ED7204DE6D300A63348 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		63777ED9204DE7C200A63348 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				63777EDC204DE9E900A63348 /* Strings.swift */,
+				63777EDF204DEA5A00A63348 /* Assets.swift */,
+				63777EDE204DEA5A00A63348 /* Storyboards.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		6393F7F9204614EA00C4B07B = {
@@ -237,6 +258,7 @@
 			buildConfigurationList = 6393F821204614EA00C4B07B /* Build configuration list for PBXNativeTarget "CookEat" */;
 			buildPhases = (
 				FC4B0B021530E37AE8ACC417 /* [CP] Check Pods Manifest.lock */,
+				63777EDA204DE82100A63348 /* 🛠 SwiftGen */,
 				6393F7FE204614EA00C4B07B /* Sources */,
 				6393F7FF204614EA00C4B07B /* Frameworks */,
 				6393F800204614EA00C4B07B /* Resources */,
@@ -321,6 +343,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 6393F7F9204614EA00C4B07B;
 			productRefGroup = 6393F803204614EA00C4B07B /* Products */;
@@ -340,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63777ED2204DE55700A63348 /* Main.storyboard in Resources */,
+				63777ED5204DE6D300A63348 /* Localizable.strings in Resources */,
 				63777ED0204DE55700A63348 /* Assets.xcassets in Resources */,
 				63777ED1204DE55700A63348 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -378,6 +402,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-AppCommon-CookEat/Pods-AppCommon-CookEat-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		63777EDA204DE82100A63348 /* 🛠 SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "🛠 SwiftGen";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SRC_TARGET_DIR=\"$PROJECT_DIR/$TARGET_NAME\"\n\n#strings\n$PODS_ROOT/SwiftGen/bin/swiftgen strings $SRC_TARGET_DIR/Resources/Base.lproj/Localizable.strings --output $SRC_TARGET_DIR/Code/Constants/Strings.swift -t flat-swift4\n\n#storyboards\n$PODS_ROOT/SwiftGen/bin/swiftgen storyboards $SRC_TARGET_DIR/ --output $SRC_TARGET_DIR/Code/Constants/Storyboards.swift -t swift4\n\n#assets\nfind $SRC_TARGET_DIR -name '*.xcassets' -print0 | xargs -0 $PODS_ROOT/SwiftGen/bin/swiftgen xcassets -t swift4 --output $SRC_TARGET_DIR/Code/Constants/Assets.swift";
 		};
 		C02A510DE05BED07E5490ED8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -443,7 +481,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				63777ECF204DE55700A63348 /* AppDelegate.swift in Sources */,
+				63777EE0204DEA5A00A63348 /* Storyboards.swift in Sources */,
+				63777EE1204DEA5A00A63348 /* Assets.swift in Sources */,
 				63777ECD204DE55700A63348 /* MasterViewController.swift in Sources */,
+				63777EDD204DE9EA00A63348 /* Strings.swift in Sources */,
 				63777ECE204DE55700A63348 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +537,15 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		63777ED7204DE6D300A63348 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63777ED8204DE79600A63348 /* fr */,
+				63777EDB204DE85800A63348 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		6393F82F20461C0900C4B07B /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -511,6 +561,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -555,7 +606,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -568,6 +619,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -606,7 +658,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
