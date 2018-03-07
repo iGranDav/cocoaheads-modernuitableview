@@ -20,12 +20,7 @@ PODS:
     - Reusable/View (= 4.0.0)
   - Reusable/Storyboard (4.0.0)
   - Reusable/View (4.0.0)
-  - RxCocoa (4.1.2):
-    - RxSwift (~> 4.0)
-  - RxRealm (0.7.5):
-    - RealmSwift (~> 3.0)
-    - RxSwift (~> 4.0)
-  - RxSwift (4.1.2)
+  - SwiftDate (4.5.1)
   - SwiftGen (5.2.1)
   - SwiftLint (0.25.0)
   - SwiftSoup (1.6.1)
@@ -39,9 +34,7 @@ DEPENDENCIES:
   - Kingfisher (~> 4.3)
   - RealmSwift (~> 3.0)
   - Reusable (~> 4.0.0)
-  - RxCocoa (~> 4.0)
-  - RxRealm (~> 0.7.4)
-  - RxSwift (~> 4.0)
+  - SwiftDate (~> 4.5.1)
   - SwiftGen (~> 5.2.1)
   - SwiftLint (~> 0.25)
   - SwiftSoup (~> 1.6)
@@ -56,15 +49,13 @@ SPEC CHECKSUMS:
   Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
   RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
-  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
-  RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e
   SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
   SwiftSoup: 1eedf56f751b36035ae6c95562f86944c9cfafee
   SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 344acc21d7c02947e7ef0a2c0e2fb1f1f22eaf62
+PODFILE CHECKSUM: fae7c161837527f488f62572f16376d5f1aeb9fc
 
 COCOAPODS: 1.4.0

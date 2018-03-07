@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import RealmSwift
 
 class ActionViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class ActionViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    RealmConfig.setup()
 
     guard let context = self.extensionContext, let items = context.inputItems as? [NSExtensionItem] else {
       return
@@ -36,6 +38,7 @@ class ActionViewController: UIViewController {
             return
           }
 
+          try? Recipe.add(from: url, name: "Imported")
           self.foundUrl = url
           OperationQueue.main.addOperation {
             weakLabel?.text = "\(url.absoluteString)\n\n à bien été ajouté à votre collection 🥘"

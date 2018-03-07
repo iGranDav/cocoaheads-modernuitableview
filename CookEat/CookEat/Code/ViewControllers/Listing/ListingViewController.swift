@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import Extra
+import SwiftDate
 
 class ListingViewController: UITableViewController {
 
@@ -109,7 +110,10 @@ extension ListingViewController {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
     let recipe = recipes[indexPath.row]
+    let date = DateInRegion(absoluteDate: recipe.dateCreated)
+
     cell.textLabel?.text = recipe.name ?? "no name yet"
+    cell.detailTextLabel?.text = date.colloquialSinceNow()
     return cell
   }
 }

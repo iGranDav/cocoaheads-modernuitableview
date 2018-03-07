@@ -10,10 +10,5 @@ import Foundation
 
 struct Config {
 
-  static let sharedContainerIdentifier: String = {
-    guard let identifier = Bundle.main.bundleIdentifier else {
-      fatalError("You must define a bundle identifier in the Info.plist file")
-    }
-    return "group.\(identifier)"
-  }()
+  static let sharedContainerIdentifier: String = "group.io.harpp.CookEat"
 }

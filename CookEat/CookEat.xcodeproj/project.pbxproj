@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ECB4DB13516AD69042C7B1C /* Pods_AppCommon_CookEat_Action_Import.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7FF3955CE3259980455EA7 /* Pods_AppCommon_CookEat_Action_Import.framework */; };
+		636A32982050ACB4003CBF27 /* Recipe+RW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F01204E02B400A63348 /* Recipe+RW.swift */; };
+		636A32992050ACB8003CBF27 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EFF204E007300A63348 /* Recipe.swift */; };
+		636A329A2050ACC0003CBF27 /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EF4204DF91200A63348 /* RealmConfig.swift */; };
+		636A329B2050ADC2003CBF27 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EF6204DF99100A63348 /* Config.swift */; };
+		636A329C2050ADD2003CBF27 /* LogsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EF8204DFA1D00A63348 /* LogsConfig.swift */; };
 		63777ECE204DE55700A63348 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EC4204DE55700A63348 /* RecipeDetailViewController.swift */; };
 		63777ECF204DE55700A63348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777EC6204DE55700A63348 /* AppDelegate.swift */; };
 		63777ED0204DE55700A63348 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63777EC8204DE55700A63348 /* Assets.xcassets */; };
@@ -64,9 +70,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		032C71075B84C5519B0EC661 /* Pods-AppCommon-CookEat-Action-Import.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCommon-CookEat-Action-Import.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-AppCommon-CookEat-Action-Import/Pods-AppCommon-CookEat-Action-Import.debug.xcconfig"; sourceTree = "<group>"; };
 		25E72FE2EC74C5AA0759517A /* Pods-AppCommon-CookEat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCommon-CookEat.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-AppCommon-CookEat/Pods-AppCommon-CookEat.debug.xcconfig"; sourceTree = "<group>"; };
 		3236BD178FA8AF0639F689FC /* Pods-AppCommon-CookEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCommon-CookEat.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AppCommon-CookEat/Pods-AppCommon-CookEat.release.xcconfig"; sourceTree = "<group>"; };
 		50D4F98C7A0154860CE950BC /* Pods_AppCommon_CookEat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppCommon_CookEat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		636A329D2050AE82003CBF27 /* CookEat-Action-Import.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CookEat-Action-Import.entitlements"; sourceTree = "<group>"; };
 		63777EC4204DE55700A63348 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		63777EC6204DE55700A63348 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63777EC8204DE55700A63348 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +106,8 @@
 		6393F83020461C0900C4B07B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		6393F83220461C0900C4B07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6393F83A20461D4900C4B07B /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		82F8E70B8F2A54585B371874 /* Pods-AppCommon-CookEat-Action-Import.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCommon-CookEat-Action-Import.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AppCommon-CookEat-Action-Import/Pods-AppCommon-CookEat-Action-Import.release.xcconfig"; sourceTree = "<group>"; };
+		DA7FF3955CE3259980455EA7 /* Pods_AppCommon_CookEat_Action_Import.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppCommon_CookEat_Action_Import.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ECB4DB13516AD69042C7B1C /* Pods_AppCommon_CookEat_Action_Import.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				50D4F98C7A0154860CE950BC /* Pods_AppCommon_CookEat.framework */,
+				DA7FF3955CE3259980455EA7 /* Pods_AppCommon_CookEat_Action_Import.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -292,6 +304,7 @@
 		6393F82C20461C0900C4B07B /* CookEat-Action-Import */ = {
 			isa = PBXGroup;
 			children = (
+				636A329D2050AE82003CBF27 /* CookEat-Action-Import.entitlements */,
 				6393F82D20461C0900C4B07B /* ActionViewController.swift */,
 				6393F82F20461C0900C4B07B /* MainInterface.storyboard */,
 				6393F83220461C0900C4B07B /* Info.plist */,
@@ -305,6 +318,8 @@
 			children = (
 				25E72FE2EC74C5AA0759517A /* Pods-AppCommon-CookEat.debug.xcconfig */,
 				3236BD178FA8AF0639F689FC /* Pods-AppCommon-CookEat.release.xcconfig */,
+				032C71075B84C5519B0EC661 /* Pods-AppCommon-CookEat-Action-Import.debug.xcconfig */,
+				82F8E70B8F2A54585B371874 /* Pods-AppCommon-CookEat-Action-Import.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -359,9 +374,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6393F83920461C0900C4B07B /* Build configuration list for PBXNativeTarget "CookEat-Action-Import" */;
 			buildPhases = (
+				BB8E7491773AF4D2345A5173 /* [CP] Check Pods Manifest.lock */,
 				6393F82720461C0900C4B07B /* Sources */,
 				6393F82820461C0900C4B07B /* Frameworks */,
 				6393F82920461C0900C4B07B /* Resources */,
+				9A9A83011DBCEAC6EE69CBD6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -399,6 +416,11 @@
 					6393F82A20461C0900C4B07B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -512,6 +534,39 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}\"/Fabric/iOS/Fabric.framework/run 8188f13403eb773bb89af2ee67a9baab10d7aee5 3f243602c10d8afa049e67502a009d813d72a89f507fc0a669882df86e5dc44d";
 		};
+		9A9A83011DBCEAC6EE69CBD6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-AppCommon-CookEat-Action-Import/Pods-AppCommon-CookEat-Action-Import-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB8E7491773AF4D2345A5173 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppCommon-CookEat-Action-Import-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C02A510DE05BED07E5490ED8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -519,17 +574,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-AppCommon-CookEat/Pods-AppCommon-CookEat-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Extra/Extra.framework",
+				"${BUILT_PRODUCTS_DIR}/Extra.default-Realm/Extra.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+				"${BUILT_PRODUCTS_DIR}/Extra-Realm/Extra.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -538,9 +592,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
@@ -602,7 +654,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				636A32992050ACB8003CBF27 /* Recipe.swift in Sources */,
+				636A32982050ACB4003CBF27 /* Recipe+RW.swift in Sources */,
+				636A329C2050ADD2003CBF27 /* LogsConfig.swift in Sources */,
+				636A329B2050ADC2003CBF27 /* Config.swift in Sources */,
 				6393F82E20461C0900C4B07B /* ActionViewController.swift in Sources */,
+				636A329A2050ACC0003CBF27 /* RealmConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,7 +888,9 @@
 		};
 		6393F83720461C0900C4B07B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 032C71075B84C5519B0EC661 /* Pods-AppCommon-CookEat-Action-Import.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "CookEat-Action-Import/CookEat-Action-Import.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
 				INFOPLIST_FILE = "CookEat-Action-Import/Info.plist";
@@ -846,7 +905,9 @@
 		};
 		6393F83820461C0900C4B07B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82F8E70B8F2A54585B371874 /* Pods-AppCommon-CookEat-Action-Import.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "CookEat-Action-Import/CookEat-Action-Import.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
 				INFOPLIST_FILE = "CookEat-Action-Import/Info.plist";
