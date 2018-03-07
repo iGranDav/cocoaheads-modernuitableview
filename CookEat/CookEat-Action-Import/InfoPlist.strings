@@ -6,4 +6,4 @@
   Copyright © 2018 Harpp. All rights reserved.
 */
 
-"CookEat-Action-Import" = "Ajouter à mon CookEat";
+"CFBundleDisplayName" = "Ajouter à mon CookEat";

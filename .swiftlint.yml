@@ -12,7 +12,6 @@ excluded:
   - Carthage
   - Pods
   - CookEat/Playground.playground
-  - CookEat/CookEat-Action-Import
 
 line_length:
   error: 200

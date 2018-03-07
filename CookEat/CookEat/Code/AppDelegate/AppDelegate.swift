@@ -39,4 +39,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
   }
 
+  func application(_ application: UIApplication,
+                   continue userActivity: NSUserActivity,
+                   restorationHandler: @escaping ([Any]?) -> Swift.Void) -> Bool {
+
+    log.info("continue userActivity: \(userActivity.activityType)\n")
+    return true
+  }
+
+  func application(_ application: UIApplication,
+                   didFailToContinueUserActivityWithType userActivityType: String,
+                   error: Error) {
+
+    log.error("didFailToContinueUserActivityWithType: \(userActivityType)\n\(error)\n")
+  }
 }
