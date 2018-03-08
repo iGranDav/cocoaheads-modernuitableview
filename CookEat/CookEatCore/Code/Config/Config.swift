@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct Config {
+public struct Config {
 
   static let sharedContainerIdentifier: String = "group.io.harpp.CookEat"
+
+  public static func setup() {
+    LogsConfig.setupConsole()
+    RealmConfig.setup()
+  }
 }

@@ -8,27 +8,15 @@ use_frameworks!
 def shared_pods
 
   # Core
-  pod 'Extra/Realm', '~> 1.0'
-
-  # Core
   pod 'RealmSwift', '~> 3.0'
-  #pod 'RxSwift', '~> 4.0'
-  #pod 'RxCocoa', '~> 4.0'
-  #pod 'RxRealm', '~> 0.7.4'
 
   pod 'SwiftyUserDefaults', '~> 3.0.0'
   pod 'SwiftDate', '~> 4.5.1'
-  pod 'SwiftSoup', '~> 1.6'
-
-  # UI
-  pod 'Reusable', '~> 4.0.0'
-  pod 'Kingfisher', '~> 4.3'
   
   # Utilities
   pod 'SwiftyBeaver', '~> 1.5'
   pod 'SwiftGen', '~> 5.2.1'
   pod 'SwiftLint', '~> 0.25'
-  pod 'Crashlytics', '~> 3.10.1'
   
 end
 
@@ -44,9 +32,23 @@ abstract_target 'AppCommon' do
 #   pod 'URLNavigator', '~> 1.2.4'
 #   pod 'OneSignal', '~> 2.5.4'
 
+  target 'CookEatCore' do
+
+    # Core
+    pod 'Extra', '~> 1.0'
+    pod 'Extra/Realm', '~> 1.0'
+    pod 'SwiftSoup', '~> 1.6'
+
+  end
+
   target 'CookEat' do
 
-    pod 'Extra', '~> 1.0'
+    # UI
+    pod 'Reusable', '~> 4.0.0'
+    pod 'Kingfisher', '~> 4.3'
+
+    #Utilities
+    pod 'Crashlytics', '~> 3.10.1'
   end
 
   target 'CookEat-Action-Import' do

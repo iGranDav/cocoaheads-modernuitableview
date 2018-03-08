@@ -9,6 +9,7 @@ import UIKit
 import RealmSwift
 import Extra
 import SwiftDate
+import CookEatCore
 
 class ListingViewController: UITableViewController {
 

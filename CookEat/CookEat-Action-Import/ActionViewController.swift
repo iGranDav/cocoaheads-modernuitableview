@@ -8,7 +8,7 @@
 
 import UIKit
 import MobileCoreServices
-import RealmSwift
+import CookEatCore
 
 class ActionViewController: UIViewController {
 
@@ -18,7 +18,7 @@ class ActionViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    RealmConfig.setup()
+    Config.setup()
 
     guard let context = self.extensionContext, let items = context.inputItems as? [NSExtensionItem] else {
       return

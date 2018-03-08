@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import RealmSwift
+import CookEatCore
 
 class RecipeDetailViewController: UIViewController {
 

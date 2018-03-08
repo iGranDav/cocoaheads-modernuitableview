@@ -8,6 +8,10 @@
 import UIKit
 import Fabric
 import Crashlytics
+import SwiftyBeaver
+import CookEatCore
+
+let log = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
     Fabric.with([Crashlytics.self])
-    LogsConfig.setupConsole()
-    RealmConfig.setup()
+    Config.setup()
 
     return true
   }

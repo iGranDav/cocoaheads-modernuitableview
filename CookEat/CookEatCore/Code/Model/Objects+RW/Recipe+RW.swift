@@ -10,14 +10,14 @@ import Foundation
 import RealmSwift
 import Extra
 
-extension Recipe {
+public extension Recipe {
 
-  static func all() -> Results<Recipe> {
+  public static func all() -> Results<Recipe> {
     let realm = Realm.ex.safeInstance()
     return realm.objects(Recipe.self)
   }
 
-  static func add(from url: URL, name: String) throws {
+  public static func add(from url: URL, name: String) throws {
 
     let recipe = Recipe()
     recipe.url = url.absoluteString
@@ -30,7 +30,7 @@ extension Recipe {
 
   }
 
-  func delete() throws {
+  public func delete() throws {
 
     let realm = Realm.ex.safeInstance()
     try realm.write {
