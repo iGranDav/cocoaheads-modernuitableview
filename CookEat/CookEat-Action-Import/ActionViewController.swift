@@ -35,20 +35,34 @@ class ActionViewController: UIViewController {
         weak var weakLabel = self.infoLabel
         provider.loadItem(forTypeIdentifier: typeId, options: nil, completionHandler: { (url, _) in
           guard let url = url as? URL else {
+            OperationQueue.main.addOperation {
+              weakLabel?.text = "Nous n'avons rien trouvé 😢"
+            }
             return
           }
 
-          try? RecipeWorker.add(from: url)
+          var result = ""
+          do {
+            try RecipeWorker.add(from: url)
+            result = "\(url.absoluteString)\n\n à bien été ajouté à votre collection 🥘"
+          } catch {
+            result = """
+                     Êtes-vous sûr qu'il s'agit d'un lien contenant une recette ?
+
+                     (\(error))
+                     """
+          }
+
           self.foundUrl = url
           OperationQueue.main.addOperation {
-            weakLabel?.text = "\(url.absoluteString)\n\n à bien été ajouté à votre collection 🥘"
+            weakLabel?.text = result
           }
         })
       }
     }
 
     if foundUrl == nil {
-      self.infoLabel.text = "Nous n'avons rien trouvé 😢"
+      self.infoLabel.text = "Récupération de votre recette en cours..."
     }
   }
 
