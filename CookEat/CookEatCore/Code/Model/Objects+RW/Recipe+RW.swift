@@ -17,15 +17,23 @@ public extension Recipe {
     return realm.objects(Recipe.self)
   }
 
-  public static func add(from url: URL, name: String) throws {
+  public static func add(from url: URL) throws {
 
     let recipe = Recipe()
     recipe.url = url.absoluteString
-    recipe.name = name
 
     let realm = Realm.ex.safeInstance()
     try realm.write {
       realm.add(recipe)
+    }
+
+  }
+
+  public static func add(_ recipe: Recipe) throws {
+
+    let realm = Realm.ex.safeInstance()
+    try realm.write {
+      realm.add(recipe, update: true)
     }
 
   }

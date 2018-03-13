@@ -35,6 +35,7 @@
 		6393F83120461C0900C4B07B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6393F82F20461C0900C4B07B /* MainInterface.storyboard */; };
 		6393F83620461C0900C4B07B /* CookEat-Action-Import.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6393F82B20461C0900C4B07B /* CookEat-Action-Import.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6393F83B20461D4900C4B07B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6393F83A20461D4900C4B07B /* InfoPlist.strings */; };
+		63BA57012057438800C88C8C /* RecipeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BA57002057438800C88C8C /* RecipeWorker.swift */; };
 		A8957F4A1E9DC5D7A3C8B437 /* Pods_AppCommon_CookEatCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C732F34E52BCDBD8BB0AA24E /* Pods_AppCommon_CookEatCore.framework */; };
 		F6434779A5A7F771A25FA9D1 /* Pods_AppCommon_CookEat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D4F98C7A0154860CE950BC /* Pods_AppCommon_CookEat.framework */; };
 /* End PBXBuildFile section */
@@ -152,6 +153,7 @@
 		6393F83020461C0900C4B07B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		6393F83220461C0900C4B07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6393F83A20461D4900C4B07B /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		63BA57002057438800C88C8C /* RecipeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeWorker.swift; sourceTree = "<group>"; };
 		82F8E70B8F2A54585B371874 /* Pods-AppCommon-CookEat-Action-Import.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCommon-CookEat-Action-Import.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AppCommon-CookEat-Action-Import/Pods-AppCommon-CookEat-Action-Import.release.xcconfig"; sourceTree = "<group>"; };
 		9956264B5AA7946D5615F2F1 /* Pods-AppCommon-CookEatCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCommon-CookEatCore.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AppCommon-CookEatCore/Pods-AppCommon-CookEatCore.release.xcconfig"; sourceTree = "<group>"; };
 		B03C97847E3880D8EEE9C02D /* Pods-AppCommon-CookEatCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCommon-CookEatCore.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-AppCommon-CookEatCore/Pods-AppCommon-CookEatCore.debug.xcconfig"; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			children = (
 				636A32C22050B31E003CBF27 /* Config */,
 				636A32C62050B31E003CBF27 /* Model */,
+				63BA56FF2057436400C88C8C /* Worker */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -408,6 +411,14 @@
 				6393F83A20461D4900C4B07B /* InfoPlist.strings */,
 			);
 			path = "CookEat-Action-Import";
+			sourceTree = "<group>";
+		};
+		63BA56FF2057436400C88C8C /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				63BA57002057438800C88C8C /* RecipeWorker.swift */,
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 		BAFAF7B47D22433AEBBD7832 /* Pods */ = {
@@ -769,6 +780,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-AppCommon-CookEat/Pods-AppCommon-CookEat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Extra-UIKit/Extra.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
@@ -776,11 +788,13 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
-				"${BUILT_PRODUCTS_DIR}/Extra/Extra.framework",
+				"${BUILT_PRODUCTS_DIR}/Extra-Foundation-Realm/Extra.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Extra.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
@@ -788,8 +802,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Extra.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -841,6 +855,7 @@
 				636A32CD2050B31F003CBF27 /* RealmConfig.swift in Sources */,
 				636A32CE2050B31F003CBF27 /* Recipe.swift in Sources */,
 				636A32CF2050B31F003CBF27 /* Recipe+RW.swift in Sources */,
+				63BA57012057438800C88C8C /* RecipeWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

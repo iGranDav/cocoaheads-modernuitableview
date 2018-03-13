@@ -1,9 +1,6 @@
 PODS:
   - Crashlytics (3.10.1):
     - Fabric (~> 1.7.5)
-  - Extra (1.1.1):
-    - Extra/Foundation (= 1.1.1)
-    - Extra/UIKit (= 1.1.1)
   - Extra/Foundation (1.1.1)
   - Extra/Realm (1.1.1):
     - RealmSwift (~> 3.0)
@@ -26,11 +23,13 @@ PODS:
   - SwiftSoup (1.6.1)
   - SwiftyBeaver (1.5.1)
   - SwiftyUserDefaults (3.0.1)
+  - Unbox (2.5.0)
 
 DEPENDENCIES:
   - Crashlytics (~> 3.10.1)
-  - Extra (~> 1.0)
+  - Extra/Foundation (~> 1.0)
   - Extra/Realm (~> 1.0)
+  - Extra/UIKit (~> 1.0)
   - Kingfisher (~> 4.3)
   - RealmSwift (~> 3.0)
   - Reusable (~> 4.0.0)
@@ -40,6 +39,7 @@ DEPENDENCIES:
   - SwiftSoup (~> 1.6)
   - SwiftyBeaver (~> 1.5)
   - SwiftyUserDefaults (~> 3.0.0)
+  - Unbox (~> 2.5.0)
 
 SPEC CHECKSUMS:
   Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
@@ -55,7 +55,8 @@ SPEC CHECKSUMS:
   SwiftSoup: 1eedf56f751b36035ae6c95562f86944c9cfafee
   SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
+  Unbox: 30e437e6151a6de16139375fd4e8dd9a664cfbf7
 
-PODFILE CHECKSUM: f221b41c03e89b11d6729f3984293b7fe219d359
+PODFILE CHECKSUM: 9afef9ebf73cc6cf7a24468892f4a0c62a76a5e5
 
 COCOAPODS: 1.4.0

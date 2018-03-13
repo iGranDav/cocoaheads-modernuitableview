@@ -62,23 +62,19 @@ class ListingViewController: UITableViewController {
   func insertNewObject(_ sender: Any) {
 
     let alert = UIAlertController(title: "Ajout d'une recette",
-                                  message: "Donnez-lui un nom et un lien vers la recette en ligne.",
+                                  message: "Donnez-nous juste un lien vers la recette en ligne.",
                                   preferredStyle: .alert)
-    alert.addTextField { textField in
-      textField.placeholder = "Nom"
-    }
     alert.addTextField { textField in
       textField.placeholder = "Url"
     }
     alert.addAction(UIAlertAction(title: L10n.commonCancel, style: .cancel, handler: nil))
     alert.addAction(UIAlertAction(title: "Ajouter", style: .default, handler: { _ in
 
-      let name = alert.textFields?.first?.text ?? ""
-      let url = alert.textFields?.last?.text ?? ""
+      let url = alert.textFields?.first?.text ?? ""
 
       if let validUrl = URL(string: url) {
         do {
-          try Recipe.add(from: validUrl, name: name)
+          try RecipeWorker.add(from: validUrl)
         } catch {
           log.error("Impossible to create recipe: \(error)")
         }

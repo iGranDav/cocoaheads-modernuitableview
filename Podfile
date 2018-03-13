@@ -35,15 +35,17 @@ abstract_target 'AppCommon' do
   target 'CookEatCore' do
 
     # Core
-    pod 'Extra', '~> 1.0'
+    pod 'Extra/Foundation', '~> 1.0'
     pod 'Extra/Realm', '~> 1.0'
     pod 'SwiftSoup', '~> 1.6'
+    pod 'Unbox', '~> 2.5.0'
 
   end
 
   target 'CookEat' do
 
     # UI
+    pod 'Extra/UIKit', '~> 1.0'
     pod 'Reusable', '~> 4.0.0'
     pod 'Kingfisher', '~> 4.3'
 

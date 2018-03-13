@@ -38,7 +38,7 @@ class ActionViewController: UIViewController {
             return
           }
 
-          try? Recipe.add(from: url, name: "Imported")
+          try? RecipeWorker.add(from: url)
           self.foundUrl = url
           OperationQueue.main.addOperation {
             weakLabel?.text = "\(url.absoluteString)\n\n à bien été ajouté à votre collection 🥘"

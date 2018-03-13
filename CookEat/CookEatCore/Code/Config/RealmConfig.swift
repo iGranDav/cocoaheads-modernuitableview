@@ -13,6 +13,10 @@ struct RealmConfig {
   static func setup() {
     var configuration = Realm.Configuration.defaultConfiguration
 
+    #if DEBUG
+    configuration.deleteRealmIfMigrationNeeded = true
+    #endif
+
     configuration.schemaVersion = 1
     configuration.migrationBlock = { (migration, oldVersion) in
       //        App       | Realm  |
