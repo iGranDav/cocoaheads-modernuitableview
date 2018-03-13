@@ -10,6 +10,20 @@ import Foundation
 import SwiftSoup
 import Unbox
 
+enum RecipeWorkerError: Error, CustomDebugStringConvertible {
+  case noJSONLD(url: URL)
+  case decodingJSONLD(url: URL, jsonLD: String)
+
+  var debugDescription: String {
+    switch self {
+    case .noJSONLD(let url):
+      return "No JSON+LD found for url \(url)"
+    case .decodingJSONLD(let url, let jsonLD):
+      return "Impossible to decode JSON+LD for url \(url):\n\(jsonLD)\n"
+    }
+  }
+}
+
 public final class RecipeWorker {
 
   /// Adds a recipe from an URL
@@ -26,16 +40,17 @@ public final class RecipeWorker {
 
     // this will look for every <script type="*ld+json"> (<script type="application/ld+json"> in our case)
     let elements = try document.select("script[type$=ld+json]")
+                               .filter({ $0.data().contains("\"@type\":\"Recipe\"") })
 
     // first parsed is commonly about the content itself
-    guard let jsonLD = elements.first()?.data().unescaped else {
+    guard let jsonLD = elements.first?.data().unescaped else {
       log.warning("No JSON+LD found for url: \(url)")
-      return
+      throw RecipeWorkerError.noJSONLD(url: url)
     }
 
     guard let data = jsonLD.data(using: .utf8) else {
       log.warning("Unable to decode JSON+LD data using utf8 for url: \(url)")
-      return
+      throw RecipeWorkerError.decodingJSONLD(url: url, jsonLD: jsonLD)
     }
 
     var recipeData: RecipeJSON = try unbox(data: data)

@@ -7,11 +7,13 @@
 
 import UIKit
 import CookEatCore
+import Kingfisher
 
 class RecipeDetailViewController: UIViewController {
 
   // MARK: - Members
 
+  @IBOutlet weak var photoImageView: UIImageView!
   @IBOutlet weak var detailDescriptionLabel: UILabel!
 
   var recipe: Recipe? {
@@ -46,6 +48,10 @@ class RecipeDetailViewController: UIViewController {
     }
 
     detailDescriptionLabel.text = "\(recipe.name ?? "")\n\n\(recipe.url)"
+
+    if let image = recipe.image, let url = URL(string: image) {
+      photoImageView.kf.setImage(with: url)
+    }
   }
 
 }

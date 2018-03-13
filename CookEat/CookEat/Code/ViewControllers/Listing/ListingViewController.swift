@@ -77,6 +77,15 @@ class ListingViewController: UITableViewController {
           try RecipeWorker.add(from: validUrl)
         } catch {
           log.error("Impossible to create recipe: \(error)")
+          let alertInvalid = UIAlertController(title: "Aucune recette trouvée 😢",
+                                               message: """
+                                                        Êtes-vous sûr qu'il s'agit d'un lien contenant une recette ?
+
+                                                        (\(error))
+                                                        """,
+                                               preferredStyle: .alert)
+          alertInvalid.addAction(UIAlertAction(title: "😇", style: .default, handler: nil))
+          self.present(alertInvalid, animated: true, completion: nil)
         }
       } else {
         let alertInvalid = UIAlertController(title: "URL invalide",
@@ -111,6 +120,11 @@ extension ListingViewController {
 
     cell.textLabel?.text = recipe.name ?? "no name yet"
     cell.detailTextLabel?.text = date.colloquialSinceNow()
+
+    if let image = recipe.image, let url = URL(string: image) {
+      cell.imageView?.kf.setImage(with: url)
+    }
+
     return cell
   }
 }
