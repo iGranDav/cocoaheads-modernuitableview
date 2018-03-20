@@ -5,7 +5,7 @@ node {
 
     stage ('gemfile') {
         wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-            sh 'bundle install'
+            bundle install
         }
     }
 }
