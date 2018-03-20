@@ -11,7 +11,7 @@ node {
 
     stage ('swiftlint') {
         wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-            sh 'bundle exec fastlane lint'
+            sh '/usr/local/bin/bundle exec fastlane lint'
         }
     }
 
@@ -23,7 +23,7 @@ node {
     stage ('unit testing') {
         timeout(90) {
             wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-                sh 'bundle exec fastlane unit_test'
+                sh '/usr/local/bin/bundle exec fastlane unit_test'
             }
         }
     }
