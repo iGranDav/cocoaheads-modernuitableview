@@ -5,7 +5,7 @@ node {
 
     stage ('bundle install') {
         wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-            sh 'set -e; export PATH=/usr/local/bin:$PATH'
+            sh 'alias bundle="/usr/local/bin/bundle"'
             sh 'export LC_ALL=en_US.UTF-8; export LANG=en_US.UTF-8'
             sh 'bundle install --path parts/gems'
         }
