@@ -1,4 +1,4 @@
-node ('macos-ci') {
+node {
     stage ('checkout') {
         checkout scm
     }
