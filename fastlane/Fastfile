@@ -12,7 +12,7 @@ platform :ios do
   
   desc "Lint the source code based on cocoapods version"
   lane :lint do
-    cocoapods(use_bundle_exec: true, repo_update: false, ansi: true)
+    cocoapods(use_bundle_exec: true, repo_update: true, ansi: true)
     swiftlint(executable: "./Pods/SwiftLint/swiftlint")
   end
   
