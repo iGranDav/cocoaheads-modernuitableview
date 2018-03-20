@@ -5,13 +5,15 @@ node {
 
     stage ('bundle install') {
         wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-            sh '/usr/local/bin/bundle install --path parts/gems'
+            sh 'export PATH=$PATH:/usr/local/bin'
+            sh 'export LC_ALL=en_US.UTF-8; export LANG=en_US.UTF-8'
+            sh 'bundle install --path parts/gems'
         }
     }
 
     stage ('swiftlint') {
         wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-            sh '/usr/local/bin/bundle exec fastlane lint'
+            sh 'bundle exec fastlane lint'
         }
     }
 
@@ -23,7 +25,7 @@ node {
     stage ('unit testing') {
         timeout(90) {
             wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-                sh '/usr/local/bin/bundle exec fastlane unit_test'
+                sh 'bundle exec fastlane unit_test'
             }
         }
     }
