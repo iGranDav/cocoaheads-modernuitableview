@@ -16,11 +16,16 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios custom_lane
+### ios lint
 ```
-fastlane ios custom_lane
+fastlane ios lint
 ```
-Description of what the lane does
+Lint the source code based on cocoapods version
+### ios unit_test
+```
+fastlane ios unit_test
+```
+Unit testing the app
 
 ----
 

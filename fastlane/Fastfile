@@ -6,14 +6,19 @@
 #     https://docs.fastlane.tools/actions
 #
 
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+  
+  desc "Lint the source code based on cocoapods version"
+  lane :lint do
+    cocoapods(use_bundle_exec: true, repo_update: false, ansi: true)
+    swiftlint(executable: "./Pods/SwiftLint/swiftlint")
+  end
+  
+  desc "Unit testing the app"
+  lane :unit_test do
+    cocoapods(use_bundle_exec: true, repo_update: true, ansi: true)
+    run_tests
   end
 end
