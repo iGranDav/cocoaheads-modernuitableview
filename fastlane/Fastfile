@@ -19,6 +19,6 @@ platform :ios do
   desc "Unit testing the app"
   lane :unit_test do
     cocoapods(use_bundle_exec: true, repo_update: true, ansi: true)
-    run_tests
+    run_tests(scheme: "CookEat", device: "iPhone 8")
   end
 end
