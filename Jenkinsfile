@@ -27,4 +27,8 @@ node {
             }
         }
     }
+
+    stage ('publish test results') {
+       step([$class: 'JUnitResultArchiver', testResults: 'fastlane/test_output/report.junit'])
+    }
 }
