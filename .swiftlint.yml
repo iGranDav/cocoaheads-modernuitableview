@@ -11,6 +11,7 @@ opt_in_rules:
 excluded:
   - Carthage
   - Pods
+  - parts
   - CookEat/Playground.playground
 
 line_length:
