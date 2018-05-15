@@ -44,9 +44,11 @@ class ListingViewController: UITableViewController {
                                     action: #selector(insertNewObject(_:)))
     navigationItem.rightBarButtonItem = addButton
 
+    refreshControl = UIRefreshControl()
+    refreshControl?.addTarget(self, action: #selector(reloadData), for: .allEvents)
+
     let tasks = Realm.ex.safeInstance().objects(Task.self).sorted(byKeyPath: #keyPath(Task.dateModified))
     state = tasks.isEmpty ? .empty : .data(tasks)
-
     tasksToken = tasks.observe { changes in
 
       switch changes {
@@ -85,8 +87,42 @@ class ListingViewController: UITableViewController {
   @objc
   func insertNewObject(_ sender: Any) {
 
+    let alert = UIAlertController(title: L10n.taskAddTitle,
+                                  message: nil,
+                                  preferredStyle: .alert)
+    alert.addTextField { textField in
+      textField.placeholder = L10n.taskNamePlaceholder
+    }
+    alert.addAction(UIAlertAction(title: L10n.commonCancel, style: .cancel, handler: nil))
+    alert.addAction(UIAlertAction(title: L10n.commonAdd, style: .default, handler: { _ in
+
+      let name = alert.textFields?.first?.text ?? ""
+
+      do {
+        try Task.add(name: name)
+      } catch {
+        self.state = .error(error)
+      }
+
+    }))
+
+    self.present(alert, animated: true, completion: nil)
   }
 
+  @objc
+  private func reloadData() {
+
+    if refreshControl?.isRefreshing == false {
+      refreshControl?.beginRefreshing()
+    }
+
+    let tasks = Realm.ex.safeInstance().objects(Task.self).sorted(byKeyPath: #keyPath(Task.dateModified))
+    state = tasks.isEmpty ? .empty : .data(tasks)
+
+    refreshControl?.endRefreshing()
+  }
+
+  /// Update listing state
   private func updateState() {
 
     var plState: PlaceholderView.State?
@@ -122,8 +158,6 @@ class ListingViewController: UITableViewController {
 extension ListingViewController {
 
   override func numberOfSections(in tableView: UITableView) -> Int {
-    guard case .data = state else { return 0 }
-
     return 1
   }
 
@@ -143,11 +177,7 @@ extension ListingViewController {
     let date = DateInRegion(absoluteDate: task.dateCreated)
 
     cell.textLabel?.text = task.name ?? "no name yet"
-    cell.detailTextLabel?.text = date.colloquialSinceNow()
-
-    if let image = task.image, let url = URL(string: image) {
-      cell.imageView?.kf.setImage(with: url)
-    }
+    cell.detailTextLabel?.text = date.colloquialSinceNow() ?? L10n.taskDateNow
 
     return cell
   }

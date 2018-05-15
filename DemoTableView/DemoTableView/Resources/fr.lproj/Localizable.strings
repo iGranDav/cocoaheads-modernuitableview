@@ -10,9 +10,15 @@
 //Commons
 "common.ok" = "Ok";
 "common.cancel" = "Annuler";
+"common.add" = "Ajouter";
 
 //Listing
 "listing.title" = "Mes tâches";
 "listing.empty.title" = "Félicitations !";
 "listing.empty.description" = "Voici une dinde";
-"listing.error.title" = "Quelque chose d'inatendu s'est produit 😣";
+"listing.error.title" = "Quelque chose d'inatendu s'est produit";
+
+//Task
+"task.add.title" = "Ajout d'une tâche";
+"task.name.placeholder" = "Ce qui est à faire";
+"task.date.now" = "à l'instant";

@@ -9,6 +9,8 @@ import Foundation
 enum L10n {
   /// DemoTableView
   static let appname = L10n.tr("Localizable", "appname")
+  /// Add
+  static let commonAdd = L10n.tr("Localizable", "common.add")
   /// Cancel
   static let commonCancel = L10n.tr("Localizable", "common.cancel")
   /// Ok
@@ -19,8 +21,14 @@ enum L10n {
   static let listingEmptyDescription = L10n.tr("Localizable", "listing.empty.description")
   /// Congratulations!
   static let listingEmptyTitle = L10n.tr("Localizable", "listing.empty.title")
-  /// Something happened 😣
+  /// Something happened
   static let listingErrorTitle = L10n.tr("Localizable", "listing.error.title")
+  /// Add a task
+  static let taskAddTitle = L10n.tr("Localizable", "task.add.title")
+  /// just now
+  static let taskDateNow = L10n.tr("Localizable", "task.date.now")
+  /// Thing to do
+  static let taskNamePlaceholder = L10n.tr("Localizable", "task.name.placeholder")
 }
 // swiftlint:enable identifier_name line_length type_body_length
 
