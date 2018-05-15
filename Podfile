@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-project './CookEat/CookEat.xcodeproj'
+project './DemoTableView/DemoTableView.xcodeproj'
 
 use_frameworks!
 
@@ -32,28 +32,19 @@ abstract_target 'AppCommon' do
 #   pod 'URLNavigator', '~> 1.2.4'
 #   pod 'OneSignal', '~> 2.5.4'
 
-  target 'CookEatCore' do
+  target 'DemoTableViewCore' do
 
     # Core
     pod 'Extra/Foundation', '~> 1.0'
     pod 'Extra/Realm', '~> 1.0'
-    pod 'SwiftSoup', '~> 1.6'
-    pod 'Unbox', '~> 2.5.0'
-
   end
 
-  target 'CookEat' do
+  target 'DemoTableView' do
 
     # UI
     pod 'Extra/UIKit', '~> 1.0'
     pod 'Reusable', '~> 4.0.0'
     pod 'Kingfisher', '~> 4.3'
-
-    #Utilities
-    pod 'Crashlytics', '~> 3.10.1'
-  end
-
-  target 'CookEat-Action-Import' do
 
   end
 

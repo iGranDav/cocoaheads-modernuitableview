@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  DemoTableView
+
+  Copyright © 2018 Harpp. All rights reserved.
+*/
+
+"appname" = "DemoTableView";
+
+//Commons
+"common.ok" = "Ok";
+"common.cancel" = "Annuler";
+
+//Listing
+"listing.title" = "Mes tâches";
