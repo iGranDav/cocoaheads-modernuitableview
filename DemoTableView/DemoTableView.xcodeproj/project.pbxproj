@@ -32,6 +32,8 @@
 		63C70D4720A9C8CD00831184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C70D3920A9C8CD00831184 /* AppDelegate.swift */; };
 		63C70D4C20A9C8D700831184 /* DemoTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C70D4A20A9C8D700831184 /* DemoTableViewTests.swift */; };
 		63C70D4D20A9C8D700831184 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63C70D4B20A9C8D700831184 /* Info.plist */; };
+		63C70D5620AB8FDE00831184 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C70D5520AB8FDE00831184 /* PlaceholderView.swift */; };
+		63C70D5820AB8FEC00831184 /* PlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C70D5720AB8FEC00831184 /* PlaceholderView.xib */; };
 		678AF7C1E9556D7C0F7FBEDD /* Pods_AppCommon_DemoTableViewCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3157EF52550AFE6243FB922 /* Pods_AppCommon_DemoTableViewCore.framework */; };
 		C6A5FAC76F2D26FC36BCAC1C /* Pods_AppCommon_DemoTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1050035C2D6F3B71C0C2B3 /* Pods_AppCommon_DemoTableView.framework */; };
 /* End PBXBuildFile section */
@@ -130,6 +132,8 @@
 		63C70D3B20A9C8CD00831184 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63C70D4A20A9C8D700831184 /* DemoTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewTests.swift; sourceTree = "<group>"; };
 		63C70D4B20A9C8D700831184 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63C70D5520AB8FDE00831184 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		63C70D5720AB8FEC00831184 /* PlaceholderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceholderView.xib; sourceTree = "<group>"; };
 		77405B2039E8C58F7C28A80E /* Pods-AppCommon-DemoTableViewCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCommon-DemoTableViewCore.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AppCommon-DemoTableViewCore/Pods-AppCommon-DemoTableViewCore.release.xcconfig"; sourceTree = "<group>"; };
 		82F8E70B8F2A54585B371874 /* Pods-AppCommon-CookEat-Action-Import.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCommon-CookEat-Action-Import.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AppCommon-CookEat-Action-Import/Pods-AppCommon-CookEat-Action-Import.release.xcconfig"; sourceTree = "<group>"; };
 		9956264B5AA7946D5615F2F1 /* Pods-AppCommon-CookEatCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCommon-CookEatCore.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AppCommon-CookEatCore/Pods-AppCommon-CookEatCore.release.xcconfig"; sourceTree = "<group>"; };
@@ -310,6 +314,7 @@
 			children = (
 				63C70D2C20A9C8CD00831184 /* Constants */,
 				63C70D3020A9C8CD00831184 /* ViewControllers */,
+				63C70D5120AB8D9300831184 /* Views */,
 				63C70D3820A9C8CD00831184 /* AppDelegate */,
 			);
 			path = Code;
@@ -328,10 +333,10 @@
 		63C70D3020A9C8CD00831184 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				63C70D3120A9C8CD00831184 /* Details */,
 				63C70D3320A9C8CD00831184 /* Main.storyboard */,
 				63C70D3420A9C8CD00831184 /* BootViewController.swift */,
 				63C70D3520A9C8CD00831184 /* Listing */,
+				63C70D3120A9C8CD00831184 /* Details */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -368,6 +373,39 @@
 				63C70D4B20A9C8D700831184 /* Info.plist */,
 			);
 			path = DemoTableViewTests;
+			sourceTree = "<group>";
+		};
+		63C70D5120AB8D9300831184 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63C70D5220AB8D9300831184 /* Cells */,
+				63C70D5320AB8D9300831184 /* Placeholders */,
+				63C70D5420AB8D9300831184 /* Headers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		63C70D5220AB8D9300831184 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		63C70D5320AB8D9300831184 /* Placeholders */ = {
+			isa = PBXGroup;
+			children = (
+				63C70D5520AB8FDE00831184 /* PlaceholderView.swift */,
+				63C70D5720AB8FEC00831184 /* PlaceholderView.xib */,
+			);
+			path = Placeholders;
+			sourceTree = "<group>";
+		};
+		63C70D5420AB8D9300831184 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		BAFAF7B47D22433AEBBD7832 /* Pods */ = {
@@ -562,6 +600,7 @@
 				63C70D3C20A9C8CD00831184 /* Assets.xcassets in Resources */,
 				63C70D3E20A9C8CD00831184 /* Localizable.strings in Resources */,
 				63C70D3D20A9C8CD00831184 /* LaunchScreen.storyboard in Resources */,
+				63C70D5820AB8FEC00831184 /* PlaceholderView.xib in Resources */,
 				63C70D4320A9C8CD00831184 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -707,6 +746,7 @@
 				63C70D4620A9C8CD00831184 /* ListingViewController.swift in Sources */,
 				63C70D4720A9C8CD00831184 /* AppDelegate.swift in Sources */,
 				63C70D4420A9C8CD00831184 /* BootViewController.swift in Sources */,
+				63C70D5620AB8FDE00831184 /* PlaceholderView.swift in Sources */,
 				63C70D3F20A9C8CD00831184 /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -821,7 +861,6 @@
 		636A32BC2050B233003CBF27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
@@ -839,7 +878,6 @@
 		636A32BD2050B233003CBF27 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
 				INFOPLIST_FILE = CookEatCoreTests/Info.plist;
@@ -970,7 +1008,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A12BA18F761EF4E5538DF2A1 /* Pods-AppCommon-DemoTableView.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
@@ -987,7 +1024,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3DA31E8E55A7D0DB2DD01BDF /* Pods-AppCommon-DemoTableView.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
@@ -1003,7 +1039,6 @@
 		6393F825204614EA00C4B07B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
@@ -1020,7 +1055,6 @@
 		6393F826204614EA00C4B07B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;

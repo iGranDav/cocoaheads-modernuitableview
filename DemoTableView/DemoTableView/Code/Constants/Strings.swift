@@ -15,6 +15,12 @@ enum L10n {
   static let commonOk = L10n.tr("Localizable", "common.ok")
   /// Your tasks
   static let listingTitle = L10n.tr("Localizable", "listing.title")
+  /// Here is a turkey
+  static let listingEmptyDescription = L10n.tr("Localizable", "listing.empty.description")
+  /// Congratulations!
+  static let listingEmptyTitle = L10n.tr("Localizable", "listing.empty.title")
+  /// Something happened 😣
+  static let listingErrorTitle = L10n.tr("Localizable", "listing.error.title")
 }
 // swiftlint:enable identifier_name line_length type_body_length
 

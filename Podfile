@@ -24,13 +24,9 @@ inhibit_all_warnings!
 
 abstract_target 'AppCommon' do
 
-  platform :ios, '10.0'
+  platform :ios, '11.0'
 
   shared_pods
-
-#   # Navigation
-#   pod 'URLNavigator', '~> 1.2.4'
-#   pod 'OneSignal', '~> 2.5.4'
 
   target 'DemoTableViewCore' do
 

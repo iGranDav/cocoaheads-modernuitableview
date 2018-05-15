@@ -13,7 +13,7 @@ public final class Task: Object {
 
   @objc public dynamic var identifier: String = UUID().uuidString
   @objc public dynamic var name: String?
-  @objc public dynamic var desc: String?
+  @objc public dynamic var notes: String?
   @objc public dynamic var image: String?
 
   @objc public dynamic var dateCreated = Date()

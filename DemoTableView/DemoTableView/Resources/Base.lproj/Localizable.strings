@@ -13,3 +13,6 @@
 
 //Listing
 "listing.title" = "Your tasks";
+"listing.empty.title" = "Congratulations!";
+"listing.empty.description" = "Here is a turkey";
+"listing.error.title" = "Something happened 😣";

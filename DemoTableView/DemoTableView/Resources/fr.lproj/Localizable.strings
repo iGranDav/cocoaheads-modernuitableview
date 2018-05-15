@@ -13,3 +13,6 @@
 
 //Listing
 "listing.title" = "Mes tâches";
+"listing.empty.title" = "Félicitations !";
+"listing.empty.description" = "Voici une dinde";
+"listing.error.title" = "Quelque chose d'inatendu s'est produit 😣";
