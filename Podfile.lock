@@ -4,11 +4,11 @@ PODS:
     - RealmSwift (~> 3.0)
   - Extra/UIKit (1.1.1)
   - Kingfisher (4.6.2)
-  - Realm (3.1.1):
-    - Realm/Headers (= 3.1.1)
-  - Realm/Headers (3.1.1)
-  - RealmSwift (3.1.1):
-    - Realm (= 3.1.1)
+  - Realm (3.5.0):
+    - Realm/Headers (= 3.5.0)
+  - Realm/Headers (3.5.0)
+  - RealmSwift (3.5.0):
+    - Realm (= 3.5.0)
   - Reusable (4.0.0):
     - Reusable/Storyboard (= 4.0.0)
     - Reusable/View (= 4.0.0)
@@ -49,8 +49,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Extra: 7c4e5aff4904ecdadc615f63d4c2f0c20910c028
   Kingfisher: 55b9c395bf8d3949676ad3861111923990ab68cf
-  Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
-  RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
+  Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
+  RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
   Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftGen: 444b4c467e512a4812b8a800d731643fd265139e

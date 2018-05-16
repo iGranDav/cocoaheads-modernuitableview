@@ -23,6 +23,8 @@ enum L10n {
   static let listingEmptyTitle = L10n.tr("Localizable", "listing.empty.title")
   /// Something happened
   static let listingErrorTitle = L10n.tr("Localizable", "listing.error.title")
+  /// Delete this task
+  static let taskDelete = L10n.tr("Localizable", "task.delete")
   /// Add a task
   static let taskAddTitle = L10n.tr("Localizable", "task.add.title")
   /// Alarm
