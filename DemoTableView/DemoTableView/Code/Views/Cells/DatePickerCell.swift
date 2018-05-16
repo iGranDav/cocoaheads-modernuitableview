@@ -9,13 +9,8 @@
 import UIKit
 import Reusable
 
-class DatePickerCell: UITableViewCell, NibReusable {
+final class DatePickerCell: UITableViewCell, NibReusable {
 
   @IBOutlet weak var datePicker: UIDatePicker!
-
-  override func awakeFromNib() {
-    super.awakeFromNib()
-
-  }
 
 }

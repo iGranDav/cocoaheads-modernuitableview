@@ -9,7 +9,7 @@
 import UIKit
 import Reusable
 
-class EditableCell: UITableViewCell, NibReusable {
+final class EditableCell: UITableViewCell, NibReusable {
 
   @IBOutlet weak var textfield: UITextField!
 

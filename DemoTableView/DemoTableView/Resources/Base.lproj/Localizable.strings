@@ -26,3 +26,4 @@
 "task.date.ask" = "Please notify me";
 "task.date.alarm" = "Alarm";
 "task.date.now" = "just now";
+"task.notes.title" = "Notes";

@@ -37,6 +37,8 @@ enum L10n {
   static let taskNamePlaceholder = L10n.tr("Localizable", "task.name.placeholder")
   /// Name
   static let taskNameTitle = L10n.tr("Localizable", "task.name.title")
+  /// Notes
+  static let taskNotesTitle = L10n.tr("Localizable", "task.notes.title")
 }
 // swiftlint:enable identifier_name line_length type_body_length
 

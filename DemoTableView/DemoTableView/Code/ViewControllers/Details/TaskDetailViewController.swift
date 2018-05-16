@@ -11,7 +11,7 @@ import Kingfisher
 import RealmSwift
 import SwiftDate
 
-class TaskDetailViewController: UITableViewController {
+final class TaskDetailViewController: UITableViewController {
 
   // MARK: - Structure
 
@@ -26,7 +26,7 @@ class TaskDetailViewController: UITableViewController {
     case `switch`(text: String, isOn: Bool)
     case date(title: String, date: Date)
     case datePicker(date: Date)
-//    case notes(text: String)
+    case notes(text: String?)
   }
 
   // MARK: - Members
@@ -37,6 +37,8 @@ class TaskDetailViewController: UITableViewController {
 
   var task: Task? {
     didSet {
+      title = task?.name
+
       if isViewLoaded {
         configureView()
       }
@@ -62,6 +64,7 @@ class TaskDetailViewController: UITableViewController {
     tableView.register(cellType: TextCell.self)
     tableView.register(cellType: EditableCell.self)
     tableView.register(cellType: DatePickerCell.self)
+    tableView.register(cellType: NotesCell.self)
 
     configureView()
   }
@@ -71,8 +74,6 @@ class TaskDetailViewController: UITableViewController {
     guard let task = task else {
       return
     }
-
-    title = task.name
 
     if let image = task.image, let url = URL(string: image) {
       photoImageView.kf.setImage(with: url)
@@ -101,6 +102,9 @@ class TaskDetailViewController: UITableViewController {
     }
 
     sections.append(dateSection)
+
+    //notes
+    sections.append(Section(title: L10n.taskNotesTitle, rows: [.notes(text: task.notes)] ))
 
     self.sections = sections
     self.tableView.reloadData()
@@ -193,6 +197,7 @@ class TaskDetailViewController: UITableViewController {
     try? realm.write {
       task?.dueDate = sender.date
     }
+
   }
 
 }
@@ -254,8 +259,12 @@ extension TaskDetailViewController {
       cell.datePicker.date = date
       cell.datePicker.addTarget(self, action: #selector(datePickerChanged(_:)), for: .valueChanged)
       return cell
-//    case .notes(let text):
-//      <#code#>
+
+    case .notes(let text):
+      let cell: NotesCell = tableView.dequeueReusableCell(for: indexPath)
+      cell.textview.text = text
+      cell.textview.delegate = self
+      return cell
     }
 
   }
@@ -293,5 +302,16 @@ extension TaskDetailViewController {
       return 50
     }
 
+  }
+}
+
+extension TaskDetailViewController: UITextViewDelegate {
+
+  func textViewDidEndEditing(_ textView: UITextView) {
+
+    let realm = Realm.ex.safeInstance()
+    try? realm.write {
+      task?.notes = textView.text
+    }
   }
 }

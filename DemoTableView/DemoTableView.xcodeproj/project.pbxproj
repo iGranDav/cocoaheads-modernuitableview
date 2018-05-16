@@ -12,6 +12,8 @@
 		6310BE5520AC5620009616F8 /* EditableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6310BE5320AC5620009616F8 /* EditableCell.xib */; };
 		6310BE5820AC7F4F009616F8 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6310BE5620AC7F4F009616F8 /* DatePickerCell.swift */; };
 		6310BE5920AC7F4F009616F8 /* DatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6310BE5720AC7F4F009616F8 /* DatePickerCell.xib */; };
+		6310BE5E20ACC1CC009616F8 /* NotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6310BE5C20ACC1CC009616F8 /* NotesCell.swift */; };
+		6310BE5F20ACC1CC009616F8 /* NotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6310BE5D20ACC1CC009616F8 /* NotesCell.xib */; };
 		636A32AC2050B233003CBF27 /* DemoTableViewCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636A32A32050B233003CBF27 /* DemoTableViewCore.framework */; };
 		636A32B82050B233003CBF27 /* DemoTableViewCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636A32A32050B233003CBF27 /* DemoTableViewCore.framework */; };
 		636A32B92050B233003CBF27 /* DemoTableViewCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 636A32A32050B233003CBF27 /* DemoTableViewCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -111,6 +113,8 @@
 		6310BE5320AC5620009616F8 /* EditableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditableCell.xib; sourceTree = "<group>"; };
 		6310BE5620AC7F4F009616F8 /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
 		6310BE5720AC7F4F009616F8 /* DatePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerCell.xib; sourceTree = "<group>"; };
+		6310BE5C20ACC1CC009616F8 /* NotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCell.swift; sourceTree = "<group>"; };
+		6310BE5D20ACC1CC009616F8 /* NotesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesCell.xib; sourceTree = "<group>"; };
 		636A32A32050B233003CBF27 /* DemoTableViewCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DemoTableViewCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		636A32AB2050B233003CBF27 /* DemoTableViewCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTableViewCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63777EE5204DEBAF00A63348 /* swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = swiftlint.sh; sourceTree = "<group>"; };
@@ -403,6 +407,8 @@
 				6310BE5320AC5620009616F8 /* EditableCell.xib */,
 				6310BE5620AC7F4F009616F8 /* DatePickerCell.swift */,
 				6310BE5720AC7F4F009616F8 /* DatePickerCell.xib */,
+				6310BE5C20ACC1CC009616F8 /* NotesCell.swift */,
+				6310BE5D20ACC1CC009616F8 /* NotesCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -619,6 +625,7 @@
 				63C70D5820AB8FEC00831184 /* PlaceholderView.xib in Resources */,
 				63C70D4320A9C8CD00831184 /* Main.storyboard in Resources */,
 				6310BE5920AC7F4F009616F8 /* DatePickerCell.xib in Resources */,
+				6310BE5F20ACC1CC009616F8 /* NotesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +767,7 @@
 				63C70D4120A9C8CD00831184 /* Storyboards.swift in Sources */,
 				63C70D4020A9C8CD00831184 /* Assets.swift in Sources */,
 				63C70D4220A9C8CD00831184 /* TaskDetailViewController.swift in Sources */,
+				6310BE5E20ACC1CC009616F8 /* NotesCell.swift in Sources */,
 				6310BE5820AC7F4F009616F8 /* DatePickerCell.swift in Sources */,
 				63C70D4620A9C8CD00831184 /* ListingViewController.swift in Sources */,
 				6310BE5120AC52F7009616F8 /* TextCell.swift in Sources */,
