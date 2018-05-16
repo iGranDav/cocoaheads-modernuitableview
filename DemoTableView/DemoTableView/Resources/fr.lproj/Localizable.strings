@@ -20,5 +20,11 @@
 
 //Task
 "task.add.title" = "Ajout d'une tâche";
+"task.name.title" = "Nom";
 "task.name.placeholder" = "Ce qui est à faire";
+"task.date.title" = "Date buttoire";
+"task.date.ask" = "M'envoyer une notification";
+"task.date.alarm" = "Alarme";
 "task.date.now" = "à l'instant";
+"task.notes.title" = "Notes";
+"task.delete" = "Supprimer cette tâche";

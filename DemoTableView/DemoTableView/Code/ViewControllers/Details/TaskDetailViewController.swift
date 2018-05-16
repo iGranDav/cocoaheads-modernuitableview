@@ -219,11 +219,7 @@ extension TaskDetailViewController {
 
     switch row {
     case .text(let title, let details):
-      let cell: TextCell = tableView.dequeueReusableCell(for: indexPath)
-      cell.textLabel?.text = title
-      cell.detailTextLabel?.text = details
-      cell.accessoryView = nil
-      return cell
+      return textCell(in: tableView, at: indexPath, text: title, details: details)
 
     case .editable(let text, let placeholder):
       let cell: EditableCell = tableView.dequeueReusableCell(for: indexPath)
@@ -234,25 +230,16 @@ extension TaskDetailViewController {
       return cell
 
     case .switch(let text, let isOn):
-      let cell: TextCell = tableView.dequeueReusableCell(for: indexPath)
-      cell.textLabel?.text = text
-      cell.detailTextLabel?.text = nil
-
       let `switch` = UISwitch(frame: .zero)
       `switch`.isOn = isOn
       `switch`.addTarget(self, action: #selector(toggleSwitch(_:)), for: .valueChanged)
 
-      cell.accessoryView = `switch`
-      return cell
+      return textCell(in: tableView, at: indexPath, text: text, details: nil, accessoryView: `switch`)
 
     case .date(let title, let date):
       let details = date.string(dateStyle: .short, timeStyle: .short, in: nil)
 
-      let cell: TextCell = tableView.dequeueReusableCell(for: indexPath)
-      cell.textLabel?.text = title
-      cell.detailTextLabel?.text = details
-      cell.accessoryView = nil
-      return cell
+      return textCell(in: tableView, at: indexPath, text: title, details: details)
 
     case .datePicker(let date):
       let cell: DatePickerCell = tableView.dequeueReusableCell(for: indexPath)
@@ -267,6 +254,19 @@ extension TaskDetailViewController {
       return cell
     }
 
+  }
+
+  private func textCell(in tableView: UITableView,
+                        at indexPath: IndexPath,
+                        text: String?,
+                        details: String?,
+                        accessoryView: UIView? = nil) -> TextCell {
+
+    let cell: TextCell = tableView.dequeueReusableCell(for: indexPath)
+    cell.textLabel?.text = text
+    cell.detailTextLabel?.text = details
+    cell.accessoryView = accessoryView
+    return cell
   }
 }
 

@@ -27,3 +27,4 @@
 "task.date.alarm" = "Alarm";
 "task.date.now" = "just now";
 "task.notes.title" = "Notes";
+"task.delete" = "Delete this task";

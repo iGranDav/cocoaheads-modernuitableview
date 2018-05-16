@@ -47,6 +47,8 @@ class ListingViewController: UITableViewController {
     refreshControl = UIRefreshControl()
     refreshControl?.addTarget(self, action: #selector(reloadData), for: .allEvents)
 
+    tableView.register(cellType: TaskCell.self)
+
     let tasks = Realm.ex.safeInstance().objects(Task.self).sorted(byKeyPath: #keyPath(Task.dateModified))
     state = tasks.isEmpty ? .empty : .data(tasks)
     tasksToken = tasks.observe { changes in
@@ -152,14 +154,31 @@ class ListingViewController: UITableViewController {
 
   }
 
+  @objc
+  private func toggleTaskState(_ sender: UIButton) {
+
+    guard case .data(let tasks) = state else { return }
+
+    let center = tableView.convert(sender.center, from: sender.superview)
+    guard let idx = tableView.indexPathForRow(at: center) else { return }
+
+    let task = tasks[idx.row]
+
+    do {
+      let realm = Realm.ex.safeInstance()
+      try realm.write {
+        task.completed = !sender.isSelected
+      }
+    } catch {
+      state = .error(error)
+    }
+
+  }
+
 }
 
 // MARK: - UITableViewDataSource
 extension ListingViewController {
-
-  override func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-  }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     guard case .data(let tasks) = state else { return 0 }
@@ -171,13 +190,35 @@ extension ListingViewController {
 
     guard case .data(let tasks) = state else { fatalError("Cannot fill any cell without data") }
 
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    let cell: TaskCell = tableView.dequeueReusableCell(for: indexPath)
 
     let task = tasks[indexPath.row]
-    let date = DateInRegion(absoluteDate: task.dateCreated)
 
-    cell.textLabel?.text = task.name ?? "no name yet"
-    cell.detailTextLabel?.text = date.colloquialSinceNow() ?? L10n.taskDateNow
+    let currentFont = cell.infoLabel.font ?? UIFont.preferredFont(forTextStyle: .body)
+    let striketroughStyle: NSUnderlineStyle = task.completed ? .styleThick : .styleNone
+    let text = NSMutableAttributedString(string: task.name ?? "",
+                                         attributes: [.strikethroughStyle: striketroughStyle.rawValue])
+
+    if let dueDate = task.dueDate, !task.completed {
+      text.append(NSAttributedString(
+        string: "\n\(dueDate.colloquialSinceNow() ?? "")",
+        attributes: [.foregroundColor: UIColor.gray,
+                     .font: currentFont.withSize(currentFont.pointSize - 2)])
+      )
+    }
+
+    if let notes = task.notes, !notes.isEmpty {
+
+      text.append(NSAttributedString(
+        string: "\n\(notes)",
+        attributes: [.foregroundColor: UIColor.lightGray,
+                     .font: currentFont.withSize(currentFont.pointSize - 3)])
+      )
+    }
+
+    cell.completedButton.isSelected = task.completed
+    cell.completedButton.addTarget(self, action: #selector(toggleTaskState(_:)), for: .touchUpInside)
+    cell.infoLabel.attributedText = text
 
     return cell
   }
