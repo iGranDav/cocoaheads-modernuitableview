@@ -9,6 +9,7 @@ import UIKit
 import DemoTableViewCore
 import Kingfisher
 import RealmSwift
+import SwiftDate
 
 class TaskDetailViewController: UITableViewController {
 
@@ -22,8 +23,9 @@ class TaskDetailViewController: UITableViewController {
   private enum Row {
     case text(title: String?, details: String?)
     case editable(text: String?, placeholder: String?)
-//    case `switch`(text: String, on: Bool)
-//    case datePicker(date: Date)
+    case `switch`(text: String, isOn: Bool)
+    case date(title: String, date: Date)
+    case datePicker(date: Date)
 //    case notes(text: String)
   }
 
@@ -59,6 +61,7 @@ class TaskDetailViewController: UITableViewController {
 
     tableView.register(cellType: TextCell.self)
     tableView.register(cellType: EditableCell.self)
+    tableView.register(cellType: DatePickerCell.self)
 
     configureView()
   }
@@ -78,12 +81,26 @@ class TaskDetailViewController: UITableViewController {
 
     var sections = [Section]()
 
+    //name
     sections.append(Section(title: L10n.taskNameTitle,
                             rows:
       [
         .editable(text: task.name, placeholder: L10n.taskNamePlaceholder)
       ])
     )
+
+    //date
+    var dateSection = Section(title: L10n.taskDateTitle,
+                              rows:
+      [
+        .switch(text: L10n.taskDateAsk, isOn: task.dueDate != nil)
+      ])
+
+    if let dueDate = task.dueDate {
+      dateSection.rows.append(Row.date(title: L10n.taskDateAlarm, date: dueDate))
+    }
+
+    sections.append(dateSection)
 
     self.sections = sections
     self.tableView.reloadData()
@@ -118,6 +135,66 @@ class TaskDetailViewController: UITableViewController {
     title = sender.text
   }
 
+  @objc
+  private func toggleSwitch(_ sender: UISwitch) {
+
+    let center = tableView.convert(sender.center, from: sender.superview)
+    guard let idx = tableView.indexPathForRow(at: center) else { return }
+
+    var section = sections[idx.section]
+
+    if sender.isOn {
+      section.rows.append(Row.date(title: L10n.taskDateAlarm, date: task?.dueDate ?? Date() ))
+    } else {
+      section.rows.removeLast(section.rows.count - 1)
+    }
+
+    if let row = section.rows.first, case .switch(let text, _) = row {
+      section.rows[0] = .switch(text: text, isOn: sender.isOn)
+    }
+    sections[idx.section] = section
+
+    tableView.reloadSections(IndexSet(integer: idx.section), with: .automatic)
+  }
+
+  private func toggleDatePicker(onSection sectionIdx: Int) {
+
+    guard sectionIdx < sections.count else { return }
+
+    tableView.beginUpdates()
+
+    var section = sections[sectionIdx]
+    if let row = section.rows.last, case .datePicker = row {
+      tableView.deleteRows(at: [IndexPath(row: section.rows.count - 1, section: sectionIdx)],
+                           with: .automatic)
+      section.rows.removeLast()
+    } else {
+      section.rows.append(Row.datePicker(date: task?.dueDate ?? Date()))
+      tableView.insertRows(at: [IndexPath(row: section.rows.count - 1, section: sectionIdx)],
+                           with: .automatic)
+    }
+
+    sections[sectionIdx] = section
+    tableView.endUpdates()
+  }
+
+  @objc
+  private func datePickerChanged(_ sender: UIDatePicker) {
+
+    let center = tableView.convert(sender.center, from: sender.superview)
+    guard let idx = tableView.indexPathForRow(at: center) else { return }
+
+    var section = sections[idx.section]
+    section.rows[1] = Row.date(title: L10n.taskDateAlarm, date: sender.date)
+    sections[idx.section] = section
+    tableView.reloadRows(at: [IndexPath(row: 1, section: idx.section)], with: .none)
+
+    let realm = Realm.ex.safeInstance()
+    try? realm.write {
+      task?.dueDate = sender.date
+    }
+  }
+
 }
 
 // MARK: - UITableViewDataSource
@@ -140,7 +217,9 @@ extension TaskDetailViewController {
       let cell: TextCell = tableView.dequeueReusableCell(for: indexPath)
       cell.textLabel?.text = title
       cell.detailTextLabel?.text = details
+      cell.accessoryView = nil
       return cell
+
     case .editable(let text, let placeholder):
       let cell: EditableCell = tableView.dequeueReusableCell(for: indexPath)
       cell.textfield.placeholder = placeholder
@@ -148,10 +227,33 @@ extension TaskDetailViewController {
       cell.textfield.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
       cell.textfield.addTarget(self, action: #selector(didEndEditing(_:)), for: .editingDidEnd)
       return cell
-//    case .switch(let text, let on):
-//      <#code#>
-//    case .datePicker(let date):
-//      <#code#>
+
+    case .switch(let text, let isOn):
+      let cell: TextCell = tableView.dequeueReusableCell(for: indexPath)
+      cell.textLabel?.text = text
+      cell.detailTextLabel?.text = nil
+
+      let `switch` = UISwitch(frame: .zero)
+      `switch`.isOn = isOn
+      `switch`.addTarget(self, action: #selector(toggleSwitch(_:)), for: .valueChanged)
+
+      cell.accessoryView = `switch`
+      return cell
+
+    case .date(let title, let date):
+      let details = date.string(dateStyle: .short, timeStyle: .short, in: nil)
+
+      let cell: TextCell = tableView.dequeueReusableCell(for: indexPath)
+      cell.textLabel?.text = title
+      cell.detailTextLabel?.text = details
+      cell.accessoryView = nil
+      return cell
+
+    case .datePicker(let date):
+      let cell: DatePickerCell = tableView.dequeueReusableCell(for: indexPath)
+      cell.datePicker.date = date
+      cell.datePicker.addTarget(self, action: #selector(datePickerChanged(_:)), for: .valueChanged)
+      return cell
 //    case .notes(let text):
 //      <#code#>
     }
@@ -163,10 +265,33 @@ extension TaskDetailViewController {
 extension TaskDetailViewController {
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    let row = sections[indexPath.section].rows[indexPath.row]
+
+    switch row {
+    case .date:
+        toggleDatePicker(onSection: indexPath.section)
+    default:
+      break
+    }
+
     tableView.deselectRow(at: indexPath, animated: true)
   }
 
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return sections[section].title
+  }
+
+  override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+
+    let row = sections[indexPath.section].rows[indexPath.row]
+
+    switch row {
+    case .datePicker:
+      return 200
+    default:
+      return 50
+    }
+
   }
 }
