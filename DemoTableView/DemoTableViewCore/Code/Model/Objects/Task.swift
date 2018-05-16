@@ -15,6 +15,7 @@ public final class Task: Object {
   @objc public dynamic var name: String?
   @objc public dynamic var notes: String?
   @objc public dynamic var image: String?
+  @objc public dynamic var dueDate: Date?
 
   @objc public dynamic var dateCreated = Date()
   @objc public dynamic var dateModified = Date()

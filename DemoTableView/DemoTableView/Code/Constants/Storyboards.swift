@@ -63,7 +63,7 @@ enum StoryboardScene {
 
     static let initialScene = InitialSceneType<UISplitViewController>(storyboard: Listing.self)
 
-    static let recipeDetailViewController = SceneType<DemoTableView.TaskDetailViewController>(storyboard: Listing.self, identifier: "RecipeDetailViewController")
+    static let taskDetailViewController = SceneType<DemoTableView.TaskDetailViewController>(storyboard: Listing.self, identifier: "TaskDetailViewController")
   }
   enum Main: StoryboardType {
     static let storyboardName = "Main"

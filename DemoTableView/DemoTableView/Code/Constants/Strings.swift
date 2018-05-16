@@ -25,10 +25,18 @@ enum L10n {
   static let listingErrorTitle = L10n.tr("Localizable", "listing.error.title")
   /// Add a task
   static let taskAddTitle = L10n.tr("Localizable", "task.add.title")
+  /// Alarm
+  static let taskDateAlarm = L10n.tr("Localizable", "task.date.alarm")
+  /// Please notify me
+  static let taskDateAsk = L10n.tr("Localizable", "task.date.ask")
   /// just now
   static let taskDateNow = L10n.tr("Localizable", "task.date.now")
+  /// Due date
+  static let taskDateTitle = L10n.tr("Localizable", "task.date.title")
   /// Thing to do
   static let taskNamePlaceholder = L10n.tr("Localizable", "task.name.placeholder")
+  /// Name
+  static let taskNameTitle = L10n.tr("Localizable", "task.name.title")
 }
 // swiftlint:enable identifier_name line_length type_body_length
 

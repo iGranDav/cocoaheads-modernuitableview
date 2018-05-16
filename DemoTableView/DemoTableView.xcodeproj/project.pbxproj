@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6310BE5120AC52F7009616F8 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6310BE5020AC52F7009616F8 /* TextCell.swift */; };
+		6310BE5420AC5620009616F8 /* EditableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6310BE5220AC5620009616F8 /* EditableCell.swift */; };
+		6310BE5520AC5620009616F8 /* EditableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6310BE5320AC5620009616F8 /* EditableCell.xib */; };
 		636A32AC2050B233003CBF27 /* DemoTableViewCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636A32A32050B233003CBF27 /* DemoTableViewCore.framework */; };
 		636A32B82050B233003CBF27 /* DemoTableViewCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636A32A32050B233003CBF27 /* DemoTableViewCore.framework */; };
 		636A32B92050B233003CBF27 /* DemoTableViewCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 636A32A32050B233003CBF27 /* DemoTableViewCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -101,6 +104,9 @@
 		400C38964E3BFB3C5EFBF393 /* Pods-AppCommon-DemoTableViewCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCommon-DemoTableViewCore.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-AppCommon-DemoTableViewCore/Pods-AppCommon-DemoTableViewCore.debug.xcconfig"; sourceTree = "<group>"; };
 		4D1050035C2D6F3B71C0C2B3 /* Pods_AppCommon_DemoTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppCommon_DemoTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D4F98C7A0154860CE950BC /* Pods_AppCommon_CookEat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppCommon_CookEat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6310BE5020AC52F7009616F8 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		6310BE5220AC5620009616F8 /* EditableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableCell.swift; sourceTree = "<group>"; };
+		6310BE5320AC5620009616F8 /* EditableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditableCell.xib; sourceTree = "<group>"; };
 		636A32A32050B233003CBF27 /* DemoTableViewCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DemoTableViewCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		636A32AB2050B233003CBF27 /* DemoTableViewCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTableViewCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63777EE5204DEBAF00A63348 /* swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = swiftlint.sh; sourceTree = "<group>"; };
@@ -388,6 +394,9 @@
 		63C70D5220AB8D9300831184 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				6310BE5020AC52F7009616F8 /* TextCell.swift */,
+				6310BE5220AC5620009616F8 /* EditableCell.swift */,
+				6310BE5320AC5620009616F8 /* EditableCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -598,6 +607,7 @@
 			files = (
 				63C70D4520A9C8CD00831184 /* Listing.storyboard in Resources */,
 				63C70D3C20A9C8CD00831184 /* Assets.xcassets in Resources */,
+				6310BE5520AC5620009616F8 /* EditableCell.xib in Resources */,
 				63C70D3E20A9C8CD00831184 /* Localizable.strings in Resources */,
 				63C70D3D20A9C8CD00831184 /* LaunchScreen.storyboard in Resources */,
 				63C70D5820AB8FEC00831184 /* PlaceholderView.xib in Resources */,
@@ -744,6 +754,8 @@
 				63C70D4020A9C8CD00831184 /* Assets.swift in Sources */,
 				63C70D4220A9C8CD00831184 /* TaskDetailViewController.swift in Sources */,
 				63C70D4620A9C8CD00831184 /* ListingViewController.swift in Sources */,
+				6310BE5120AC52F7009616F8 /* TextCell.swift in Sources */,
+				6310BE5420AC5620009616F8 /* EditableCell.swift in Sources */,
 				63C70D4720A9C8CD00831184 /* AppDelegate.swift in Sources */,
 				63C70D4420A9C8CD00831184 /* BootViewController.swift in Sources */,
 				63C70D5620AB8FDE00831184 /* PlaceholderView.swift in Sources */,
