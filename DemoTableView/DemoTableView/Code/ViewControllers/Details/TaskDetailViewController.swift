@@ -7,7 +7,6 @@
 
 import UIKit
 import DemoTableViewCore
-import Kingfisher
 import RealmSwift
 import SwiftDate
 
@@ -21,20 +20,10 @@ final class TaskDetailViewController: UITableViewController {
   }
 
   private enum Row {
-    case text(title: String?, details: String?)
     case editable(text: String?, placeholder: String?)
-    case `switch`(text: String, isOn: Bool)
-    case date(title: String, date: Date)
-    case datePicker(date: Date)
-    case notes(text: String?)
-    case delete
   }
 
   // MARK: - Members
-
-  private lazy var photoImageView: UIImageView = {
-    return UIImageView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 120))
-  }()
 
   var task: Task? {
     didSet {
@@ -62,10 +51,7 @@ final class TaskDetailViewController: UITableViewController {
     navigationItem.leftItemsSupplementBackButton = true
     navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
 
-    tableView.register(cellType: TextCell.self)
     tableView.register(cellType: EditableCell.self)
-    tableView.register(cellType: DatePickerCell.self)
-    tableView.register(cellType: NotesCell.self)
 
     configureView()
   }
@@ -74,11 +60,6 @@ final class TaskDetailViewController: UITableViewController {
 
     guard let task = task else {
       return
-    }
-
-    if let image = task.image, let url = URL(string: image) {
-      photoImageView.kf.setImage(with: url)
-      tableView.tableHeaderView = photoImageView
     }
 
     var sections = [Section]()
@@ -91,118 +72,11 @@ final class TaskDetailViewController: UITableViewController {
       ])
     )
 
-    //date
-    var dateSection = Section(title: L10n.taskDateTitle,
-                              rows:
-      [
-        .switch(text: L10n.taskDateAsk, isOn: task.dueDate != nil)
-      ])
-
-    if let dueDate = task.dueDate {
-      dateSection.rows.append(Row.date(title: L10n.taskDateAlarm, date: dueDate))
-    }
-
-    sections.append(dateSection)
-
-    //notes
-    sections.append(Section(title: L10n.taskNotesTitle, rows: [.notes(text: task.notes)] ))
-
-    //delete
-    sections.append(Section(title: nil, rows: [.delete] ))
-
     self.sections = sections
     self.tableView.reloadData()
   }
 
   // MARK: - Actions
-
-  @objc
-  private func editingChanged(_ sender: UITextField) {
-
-    let center = tableView.convert(sender.center, from: sender.superview)
-    guard let idx = tableView.indexPathForRow(at: center) else { return }
-
-    let row = sections[idx.section].rows[idx.row]
-    guard case .editable = row else { return }
-
-    let realm = Realm.ex.safeInstance()
-    try? realm.write {
-      task?.name = sender.text
-    }
-  }
-
-  @objc
-  private func didEndEditing(_ sender: UITextField) {
-
-    let center = tableView.convert(sender.center, from: sender.superview)
-    guard let idx = tableView.indexPathForRow(at: center) else { return }
-
-    let row = sections[idx.section].rows[idx.row]
-    guard case .editable = row else { return }
-
-    title = sender.text
-  }
-
-  @objc
-  private func toggleSwitch(_ sender: UISwitch) {
-
-    let center = tableView.convert(sender.center, from: sender.superview)
-    guard let idx = tableView.indexPathForRow(at: center) else { return }
-
-    var section = sections[idx.section]
-
-    if sender.isOn {
-      section.rows.append(Row.date(title: L10n.taskDateAlarm, date: task?.dueDate ?? Date() ))
-    } else {
-      section.rows.removeLast(section.rows.count - 1)
-    }
-
-    if let row = section.rows.first, case .switch(let text, _) = row {
-      section.rows[0] = .switch(text: text, isOn: sender.isOn)
-    }
-    sections[idx.section] = section
-
-    tableView.reloadSections(IndexSet(integer: idx.section), with: .automatic)
-  }
-
-  private func toggleDatePicker(onSection sectionIdx: Int) {
-
-    guard sectionIdx < sections.count else { return }
-
-    tableView.beginUpdates()
-
-    var section = sections[sectionIdx]
-    if let row = section.rows.last, case .datePicker = row {
-      tableView.deleteRows(at: [IndexPath(row: section.rows.count - 1, section: sectionIdx)],
-                           with: .automatic)
-      section.rows.removeLast()
-    } else {
-      section.rows.append(Row.datePicker(date: task?.dueDate ?? Date()))
-      tableView.insertRows(at: [IndexPath(row: section.rows.count - 1, section: sectionIdx)],
-                           with: .automatic)
-    }
-
-    sections[sectionIdx] = section
-    tableView.endUpdates()
-  }
-
-  @objc
-  private func datePickerChanged(_ sender: UIDatePicker) {
-
-    let center = tableView.convert(sender.center, from: sender.superview)
-    guard let idx = tableView.indexPathForRow(at: center) else { return }
-
-    var section = sections[idx.section]
-    section.rows[1] = Row.date(title: L10n.taskDateAlarm, date: sender.date)
-    sections[idx.section] = section
-    tableView.reloadRows(at: [IndexPath(row: 1, section: idx.section)], with: .none)
-
-    let realm = Realm.ex.safeInstance()
-    try? realm.write {
-      task?.dueDate = sender.date
-    }
-
-  }
 
 }
 
@@ -222,45 +96,12 @@ extension TaskDetailViewController {
     let row = sections[indexPath.section].rows[indexPath.row]
 
     switch row {
-    case .text(let title, let details):
-      return textCell(in: tableView, at: indexPath, text: title, details: details)
-
     case .editable(let text, let placeholder):
       let cell: EditableCell = tableView.dequeueReusableCell(for: indexPath)
       cell.textfield.placeholder = placeholder
       cell.textfield.text = text
-      cell.textfield.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
-      cell.textfield.addTarget(self, action: #selector(didEndEditing(_:)), for: .editingDidEnd)
       return cell
 
-    case .switch(let text, let isOn):
-      let `switch` = UISwitch(frame: .zero)
-      `switch`.isOn = isOn
-      `switch`.addTarget(self, action: #selector(toggleSwitch(_:)), for: .valueChanged)
-
-      return textCell(in: tableView, at: indexPath, text: text, details: nil, accessoryView: `switch`)
-
-    case .date(let title, let date):
-      let details = date.string(dateStyle: .short, timeStyle: .short, in: nil)
-
-      return textCell(in: tableView, at: indexPath, text: title, details: details)
-
-    case .datePicker(let date):
-      let cell: DatePickerCell = tableView.dequeueReusableCell(for: indexPath)
-      cell.datePicker.date = date
-      cell.datePicker.addTarget(self, action: #selector(datePickerChanged(_:)), for: .valueChanged)
-      return cell
-
-    case .notes(let text):
-      let cell: NotesCell = tableView.dequeueReusableCell(for: indexPath)
-      cell.textview.text = text
-      cell.textview.delegate = self
-      return cell
-
-    case .delete:
-      let cell = textCell(in: tableView, at: indexPath, text: L10n.taskDelete, details: nil)
-      cell.textLabel?.textColor = UIColor.red
-      return cell
     }
 
   }
@@ -286,18 +127,6 @@ extension TaskDetailViewController {
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-    let row = sections[indexPath.section].rows[indexPath.row]
-
-    switch row {
-    case .date:
-      toggleDatePicker(onSection: indexPath.section)
-    case .delete:
-      try? task?.delete()
-      navigationController?.navigationController?.popViewController(animated: true)
-    default:
-      break
-    }
-
     tableView.deselectRow(at: indexPath, animated: true)
   }
 
@@ -305,27 +134,4 @@ extension TaskDetailViewController {
     return sections[section].title
   }
 
-  override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-
-    let row = sections[indexPath.section].rows[indexPath.row]
-
-    switch row {
-    case .datePicker:
-      return 200
-    default:
-      return 50
-    }
-
-  }
-}
-
-extension TaskDetailViewController: UITextViewDelegate {
-
-  func textViewDidEndEditing(_ textView: UITextView) {
-
-    let realm = Realm.ex.safeInstance()
-    try? realm.write {
-      task?.notes = textView.text
-    }
-  }
 }
