@@ -27,6 +27,7 @@ final class TaskDetailViewController: UITableViewController {
     case date(title: String, date: Date)
     case datePicker(date: Date)
     case notes(text: String?)
+    case delete
   }
 
   // MARK: - Members
@@ -105,6 +106,9 @@ final class TaskDetailViewController: UITableViewController {
 
     //notes
     sections.append(Section(title: L10n.taskNotesTitle, rows: [.notes(text: task.notes)] ))
+
+    //delete
+    sections.append(Section(title: nil, rows: [.delete] ))
 
     self.sections = sections
     self.tableView.reloadData()
@@ -252,6 +256,11 @@ extension TaskDetailViewController {
       cell.textview.text = text
       cell.textview.delegate = self
       return cell
+
+    case .delete:
+      let cell = textCell(in: tableView, at: indexPath, text: L10n.taskDelete, details: nil)
+      cell.textLabel?.textColor = UIColor.red
+      return cell
     }
 
   }
@@ -264,10 +273,12 @@ extension TaskDetailViewController {
 
     let cell: TextCell = tableView.dequeueReusableCell(for: indexPath)
     cell.textLabel?.text = text
+    cell.textLabel?.textColor = UIColor.black
     cell.detailTextLabel?.text = details
     cell.accessoryView = accessoryView
     return cell
   }
+
 }
 
 // MARK: - UITableViewDelegate
@@ -279,7 +290,10 @@ extension TaskDetailViewController {
 
     switch row {
     case .date:
-        toggleDatePicker(onSection: indexPath.section)
+      toggleDatePicker(onSection: indexPath.section)
+    case .delete:
+      try? task?.delete()
+      navigationController?.navigationController?.popViewController(animated: true)
     default:
       break
     }

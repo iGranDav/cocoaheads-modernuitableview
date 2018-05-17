@@ -49,7 +49,8 @@ class ListingViewController: UITableViewController {
 
     tableView.register(cellType: TaskCell.self)
 
-    let tasks = Realm.ex.safeInstance().objects(Task.self).sorted(byKeyPath: #keyPath(Task.dateModified))
+    let tasks = Realm.ex.safeInstance().objects(Task.self).sorted(byKeyPath: #keyPath(Task.dateCreated),
+                                                                  ascending: false)
     state = tasks.isEmpty ? .empty : .data(tasks)
     tasksToken = tasks.observe { changes in
 
