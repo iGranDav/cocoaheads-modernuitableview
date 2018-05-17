@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:demo.md">
+   </FileRef>
+   <FileRef
       location = "group:DemoTableView/DemoTableView.xcodeproj">
    </FileRef>
    <FileRef

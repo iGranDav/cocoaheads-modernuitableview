@@ -17,6 +17,7 @@ final class TaskCell: UITableViewCell, NibReusable {
   override func awakeFromNib() {
     super.awakeFromNib()
 
+    infoLabel.numberOfLines = 4
     selectionStyle = .gray
   }
 }
