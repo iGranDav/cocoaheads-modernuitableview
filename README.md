@@ -3,7 +3,7 @@ Demo project for Modern UITableView talk
 
 During [CocoaHeads Nantes](https://www.meetup.com/fr-FR/CocoaHeads-Nantes) [@BeAppTeam](https://twitter.com/beappteam)
 
-You can find the full presentation [here](https://www.youtube.com/channel/UCujCtihqwPrpEOsuyAVNh3A)
+You can find the full video of the presentation [here](https://youtu.be/L1G_qhuq-4g)
 
 ## How to
 
