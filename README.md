@@ -1,7 +1,7 @@
 Demo project for Modern UITableView talk
 ========================================
 
-During CocoaHeads Nantes @BeAppTeam
+During [CocoaHeads Nantes](https://www.meetup.com/fr-FR/CocoaHeads-Nantes) [@BeAppTeam](https://twitter.com/beappteam)
 
 You can find the full presentation [here](https://www.youtube.com/channel/UCujCtihqwPrpEOsuyAVNh3A)
 
