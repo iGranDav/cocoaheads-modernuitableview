@@ -241,7 +241,7 @@ extension TaskDetailViewController {
       return textCell(in: tableView, at: indexPath, text: text, details: nil, accessoryView: `switch`)
 
     case .date(let title, let date):
-      let details = date.string(dateStyle: .short, timeStyle: .short, in: nil)
+      let details = date.toString(.dateTime(.short))
 
       return textCell(in: tableView, at: indexPath, text: title, details: details)
 

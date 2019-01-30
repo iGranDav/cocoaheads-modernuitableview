@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     Config.setup()
 
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication,
                    continue userActivity: NSUserActivity,
-                   restorationHandler: @escaping ([Any]?) -> Swift.Void) -> Bool {
+                   restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
 
     log.info("continue userActivity: \(userActivity.activityType)\n")
     return true

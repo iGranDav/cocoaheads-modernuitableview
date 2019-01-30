@@ -17,9 +17,9 @@ final class PlaceholderView: UIView, NibLoadable {
     var details: String?
   }
 
-  @objc @IBOutlet private weak var emojiLabel: UILabel!
-  @objc @IBOutlet private weak var titleLabel: UILabel!
-  @objc @IBOutlet private weak var descriptionLabel: UILabel!
+  @IBOutlet private weak var emojiLabel: UILabel!
+  @IBOutlet private weak var titleLabel: UILabel!
+  @IBOutlet private weak var descriptionLabel: UILabel!
 
   var state: State? {
     didSet {

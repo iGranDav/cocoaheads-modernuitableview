@@ -196,13 +196,13 @@ extension ListingViewController {
     let task = tasks[indexPath.row]
 
     let currentFont = cell.infoLabel.font ?? UIFont.preferredFont(forTextStyle: .body)
-    let striketroughStyle: NSUnderlineStyle = task.completed ? .styleThick : .styleNone
+    let striketroughStyle: NSUnderlineStyle = task.completed ? .thick : []
     let text = NSMutableAttributedString(string: task.name ?? "",
                                          attributes: [.strikethroughStyle: striketroughStyle.rawValue])
 
     if let dueDate = task.dueDate, !task.completed {
       text.append(NSAttributedString(
-        string: "\n\(dueDate.colloquialSinceNow() ?? "")",
+        string: "\n\(dueDate.toRelative())",
         attributes: [.foregroundColor: UIColor.gray,
                      .font: currentFont.withSize(currentFont.pointSize - 2)])
       )
@@ -244,7 +244,7 @@ extension ListingViewController {
   }
 
   override func tableView(_ tableView: UITableView,
-                          commit editingStyle: UITableViewCellEditingStyle,
+                          commit editingStyle: UITableViewCell.EditingStyle,
                           forRowAt indexPath: IndexPath) {
 
     guard case .data(let tasks) = state else { return }

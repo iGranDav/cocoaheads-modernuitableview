@@ -26,7 +26,6 @@
 		63C70D1A20A9C8B500831184 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C70D1020A9C8B400831184 /* Task.swift */; };
 		63C70D1B20A9C8B500831184 /* Task+RW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C70D1220A9C8B400831184 /* Task+RW.swift */; };
 		63C70D2120A9C8C100831184 /* DemoTableViewCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C70D1F20A9C8C100831184 /* DemoTableViewCoreTests.swift */; };
-		63C70D2220A9C8C100831184 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63C70D2020A9C8C100831184 /* Info.plist */; };
 		63C70D3C20A9C8CD00831184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C70D2520A9C8CD00831184 /* Assets.xcassets */; };
 		63C70D3D20A9C8CD00831184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C70D2620A9C8CD00831184 /* LaunchScreen.storyboard */; };
 		63C70D3E20A9C8CD00831184 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63C70D2820A9C8CD00831184 /* Localizable.strings */; };
@@ -40,7 +39,6 @@
 		63C70D4620A9C8CD00831184 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C70D3720A9C8CD00831184 /* ListingViewController.swift */; };
 		63C70D4720A9C8CD00831184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C70D3920A9C8CD00831184 /* AppDelegate.swift */; };
 		63C70D4C20A9C8D700831184 /* DemoTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C70D4A20A9C8D700831184 /* DemoTableViewTests.swift */; };
-		63C70D4D20A9C8D700831184 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63C70D4B20A9C8D700831184 /* Info.plist */; };
 		63C70D5620AB8FDE00831184 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C70D5520AB8FDE00831184 /* PlaceholderView.swift */; };
 		63C70D5820AB8FEC00831184 /* PlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C70D5720AB8FEC00831184 /* PlaceholderView.xib */; };
 		678AF7C1E9556D7C0F7FBEDD /* Pods_AppCommon_DemoTableViewCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3157EF52550AFE6243FB922 /* Pods_AppCommon_DemoTableViewCore.framework */; };
@@ -615,7 +613,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63C70D2220A9C8C100831184 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,7 +637,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63C70D4D20A9C8D700831184 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,7 +857,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.harpp.DemoTableViewCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -887,7 +883,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.harpp.DemoTableViewCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -900,12 +896,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
-				INFOPLIST_FILE = CookEatCoreTests/Info.plist;
+				INFOPLIST_FILE = DemoTableViewCoreTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.harpp.CookEatCoreTests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.harpp.DemoTableViewCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoTableView.app/DemoTableView";
 			};
@@ -916,12 +912,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
-				INFOPLIST_FILE = CookEatCoreTests/Info.plist;
+				INFOPLIST_FILE = DemoTableViewCoreTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.harpp.CookEatCoreTests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.harpp.DemoTableViewCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoTableView.app/DemoTableView";
 			};
@@ -1051,7 +1047,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.harpp.DemoTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1067,7 +1063,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.harpp.DemoTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1078,11 +1074,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
-				INFOPLIST_FILE = CookEatTests/Info.plist;
+				INFOPLIST_FILE = DemoTableViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.harpp.CookEatTests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.harpp.DemoTableViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoTableView.app/DemoTableView";
 			};
@@ -1094,11 +1090,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P59DKH4EDQ;
-				INFOPLIST_FILE = CookEatTests/Info.plist;
+				INFOPLIST_FILE = DemoTableViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.harpp.CookEatTests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.harpp.DemoTableViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoTableView.app/DemoTableView";
 			};
